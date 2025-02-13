@@ -34,6 +34,9 @@
 
 \newpage
 
+%
+% Ejercicio 1
+%
 \textbf{1.} Dibuje todas las gráficas no isomorfas de cuatro vértices. Justifique brevemente por qué son
 todas, es decir, justifique por qué la lista que exhibe es exhaustiva.
 
@@ -181,8 +184,27 @@ todas, es decir, justifique por qué la lista que exhibe es exhaustiva.
         \caption{Gráfica $G_11$}
     \end{minipage}
 \end{figure}
+
+Parece haber un patrón en la forma de dibujar las gŕaficas:\\
+
+Para 0 y 6 aristas se tiene una sola posibilidad de gráfica. Lo mismo sucede para las graficas de 1 y 5 aristas.\\
+
+Ahora, para las gráficas de 2 y 4 aristas se tienen dos posibilidades de gráfica para cada una. Ya sea añadiendo una arista a la grafica de secuencia
+de grados $[1, 1, 0, 0]$, vemos que podemos añadir la nueva arista tal que
+tenga un extremo en un vértice con $d(V(G)) = 1$ o $d(V(G)) = 0$, 
+de forma que no repitan las aristas existentes, de ahí las 2 posibilidades de graficas.\\
+
+Este proceso aplica para la gráfica de 5 aristas, cuya secuencia de grados es $[3, 3, 2, 2,]$, vemos
+que podemos aliminar una arista tal que tenga un extremo en un vértice con $d(V_g) = 2$ o $d(V_g) = 3$\\
+
+De las gráficas anteriormente obtenidas, ya sea quitando o añadiendo aristas, 
+ahora tendremos secuencias de grados con tres posibilidades para colocar nuevas aristas,
+de ahí que para 3 aristas tenemos 3 posibles gráficas.\\
 \vspace{1cm}
 
+%
+% Ejercicio 2
+%
 \textbf{2.} Sean $G$ y $H$ gráficas.
 \\
 \\
@@ -246,6 +268,9 @@ existe al menos una arista con un extremo en $X$ y el otro en $Y$.\\
 Por lo tanto, $\overline{G}$ es conexa.
 \vspace{1cm}
 
+%
+% Ejercicio 3
+%
 \textbf{3.} Sea $D$ una digráfica. Utilizando un análogo para digráficas de las matrices de incidencia, dmeuestra que:\\
 \[
 \sum_{\displaystyle v \in V_D} d^{+}(v) = \sum_{\displaystyle v \in V_D} d^{-}(v) = |A_D|
@@ -265,10 +290,40 @@ Por lo tanto, $\overline{G}$ es conexa.
 
 $P.D.$
 \[\sum_{\displaystyle v \in V_D} d^{+}(v) = \sum_{\displaystyle v \in V_D} d^{-}(v) = |A_D|\]
-Si $D$ es una digráfica, enotnces $D$ es una pareja ordenada $D=(V,A)$, donde $V$ es un conjunto arbitrario y $A$ es un subconjunto de $V \times V$.
+Sea $M^+$ y $M^-$ las matrices de incidencia de los exgrados e ingrados respectivamente, si tenemos una gráfica dirigida $D$ y su conjunto
+de vértices $V(D)$ tal que:
+\[V(D) = \{v_1, v_2, ..., v_n\}\]
+y su conjunto de aristas $A(D)$ tal que:
+\[A(D) = \{e_1, e_2, ..., e_m\}\]
+Para la matríz de incidencia de una digráfica, tanto para los exgrados e ingrados, la suma
+de los elementos de cada columna es igual a $1$. Sea la suma de los elementos de la columna igual a $0$,
+se concluye que la arista no existe, por otro lado, si la suma es igual a $1$, la arista \textit{sale} de algún vértice (exgrado)
+o se dirige a algún vértice (ingrado).\\
+
+Suponiendo que la suma de la columna sea $\geq 2$, esto no es posible puesto que una arista sólo puede partir de un solo punto y viceversa, $i.e$ sólo 
+puede dirigirse a un solo punto.\\
+
+Como resultado al sumar todas las columnas de $M^+$ o $M^-$ obtenemos el número de aristas de la gráfica, $i.e$ se obtiene la 
+cardinalidad de $A(D)$.
+
+De forma similar, si sumamos las entradas del $i-esimo$ renglón de $M^+$ obtenemos el exgrado (o ingrado en el caso de $M^-$) del vértice $v_i$.\\
+
+En base a lo anterior se puede argumentar que:
+\[\mid A(D) \mid = \sum\limits_{j = 1}^{m} 1\]
+\[= \sum\limits_{j = 1}^{m} \sum\limits_{n = 1}^{n} M^+_{ij}\]
+\[= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{m} M^+_{ij}\]
+\[= \sum\limits_{i = 1}^{n} d^+(v_i)\]
+\[= \sum\limits_{i = 1}^{n} d^+(v_i)\]
+\[= \sum_{\displaystyle v \in V(D)} d^+(v_i)\] 
+Analogamente podemos hacerlo para ingrados, por lo que:
+\[\mid A(D) \mid = \sum_{\displaystyle v \in V(D)} d^+(v) = \sum_{\displaystyle v \in V(D)} d^-(v)\]
+
+
 
 \vspace{1cm}
-
+%
+% Ejercicio 4
+%
 \textbf{4.} Sea $n$ un entero positivo. Definimos la \textit{Retícula Boleana, BL\_n}, como
 la gráfica cuyo conjunto de vértices es el conjunto de todos los posibles subconjuntos
 de $\{1, ..., n\}$, donde dos subconjuntos $X$ y $Y$ son adyacentes si y sólo si su diferencia
@@ -296,7 +351,7 @@ Para $BL_1$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los
 
 Para $BL_2$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1, 2\}$, es decir:
 \[V(BL_2) = \{\emptyset, \{1\}, \{2\} \{1, 2\}\}\]
-\newpage
+
 \begin{figure}[h!]
     \centering
     \begin{minipage}{0.4\textwidth}
@@ -339,7 +394,7 @@ Para $BL_3$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los
 Para $BL_4$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1, 2, 3, 4\}$, es decir:
 \[V(BL_4) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{4\}, \{1, 2\}, \{1, 3\}, \{1, 4\}, \{2, 3\}, \{2, 4\},\]
 \[\{3, 4\}, \\\{1, 2, 3\}, \{1, 3, 4\}, \{1, 2, 4\}, \{2, 3, 4\}, \{1, 2, 3, 4\}\}\]
-
+\newpage
 \begin{figure}[h!]
     \centering
     \begin{minipage}{0.4\textwidth}
@@ -380,7 +435,10 @@ podemos verlo como el conjunto potencia de $\{1, ..., n\}$, es decir:
 cuya cardinalidad se define como:
 \[|V_{BL_n}| = 2^n\]
 
-\textbf{c)} Demuestre que $BL_n$ es bipartita pra cualquier $n \in \mathbb{Z} \text{ tal que } n > 0$.
+El primer producto $n$ representa las aristas que hay en los vertices de los extremos de la gráfica,
+en este caso $\varnothing$ y $\{1, 2, ... , n\}$
+
+\textbf{c)} Demuestre que $BL_n$ es bipartita para cualquier $n \in \mathbb{Z} \text{ tal que } n > 0$.
 
 \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
     $Def$. Sea $n$ un entero positivo. la \textbf{Retícula Boleana, BL\_n}, como
@@ -391,10 +449,31 @@ cuya cardinalidad se define como:
     $Def.$ Una gráfica $G$ es \textbf{bipartita} si $V(G)$ admite una patición $V = (X, Y)$ tal que $X$ y $Y$ son conjuntos independientes.
 \end{tcolorbox}
 
-$P.D$ 
+$P.D$ $BL_N$ es bipartita para cualquier $N \in \mathbb{Z^+}$.\\
 
+Sean $u,v$ vertices de $V(BL_n)$. Notemos que por definición, los vértices de $BL_n$  tienen cardinalidad par e impar.\\
+
+Supongamos que tomamos dos vértices pares $u$ y $v$ de nuestra gŕafica $BL_n$, de tal forma que los podemos representar
+como $\# u  = 2m$ y $\# v = 2t$ donde $m$ y $t$ son enteros positivos.\\
+
+Digamos que $m > t$ y $m \neq t$ por lo que $m$ es igual a $t + g$, con $g \in \mathbb{N}$. Sin 
+importar si hacemos la operación $2 m - 2t$ o $2t - 2m$ tendremos que $2 (t + g) - 2t = 2g$ o $2t - 2(t + g) = 2g$ (por conmutatividad de la suma).\\
+
+Es decir, siempre nos quedara un vértice con cardinalidad par si tratamos de sacar su diferencia simétrica. Analogamente se puede probar lo mismo para los vértices impares.\\
+
+Recordemos que si tenemos un vértice de cardinalidad par o impar estos siempre van a tener al menos una arista por definición de $BL_n$, de 
+tal manera que vamos a tener una partición $(X, Y) en V(BL_n)$ tal que $X \cap Y = \varnothing$ \\
+
+Por lo que en nuestro conjunto de vértices $V(BL_n)$ siempre va a existir una bipartición:
+\[X = \{ x \mid \# x \text{ es par}\} \text{ y}\]
+\[Y = \{ y \mid \# y \text{ es impar}\}\]
+
+De esta manera aseguramos que la gráfica $BL_n$ es bipartita para cualquier $n \in \mathbb{Z^+}$.
 \vspace{1cm}
 
+%
+% Ejercicio 5
+%
 \textbf{5.} El algoritmo de Euclides es uno de los algoritmos más antiguos que sigue siendo usado hoy en
 día. Este se basa en el hecho que el máximo común divisor de dos números $a$ y $b$ con $a > b$, es igual
 al máximo común divisor de $b$ y $a \bmod b$.\\
