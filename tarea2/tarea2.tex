@@ -12,7 +12,7 @@
 
 \tcbuselibrary{breakable}
 
-\title{\textbf{Gráficas y Juegos: Tarea 01}}
+\title{\textbf{Gráficas y Juegos: Tarea 02}}
 \author{Martínez Méndez Ángel Antonio\\Pinzón Chan José Carlos\\Rendón Ávila Jesús Mateo}
 \date{\today}
 
@@ -37,179 +37,21 @@
 %
 % Ejercicio 1
 %
-\textbf{1.} Dibuje todas las gráficas no isomorfas de cuatro vértices. Justifique brevemente por qué son
-todas, es decir, justifique por qué la lista que exhibe es exhaustiva.
+\textbf{1.} Sea $D$ una digráfica de orden $n$. Demuestre que si $D$ no tiene ciclos dirigidos,
+entonces existe un orden total, $v1 , . . . , vn$ de $V_D$ , tal que siempre que $(vi , vj)$ sea
+una flecha de $D$, se tiene que $i < j$.
 
-\vspace{1cm}
+\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
+    $G$ es isomorfa a $H$.
+\end{tcolorbox}
 
-%Primera fila de graficas
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-        \end{tikzpicture}
-        \caption{Gráfica $G_1$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (c);
-        \end{tikzpicture}
-        \caption{Gráfica $G_2$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (c) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_3$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (c) (a) -- (b);
-        \end{tikzpicture}
-        \caption{Gráfica $G_4$}
-    \end{minipage}
-\end{figure}
-
-%segunda fila de graficas
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (a) -- (c) (a) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_5$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (b) -- (c) (c) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_6$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (b) -- (d) (a) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_7$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (c) (a) -- (b) (b) -- (c) (c) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_8$}
-    \end{minipage}
-\end{figure}
-
-%tercera fila de graficas
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (a) -- (d) (b) -- (c) (c) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_9$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (a) -- (c) (b) -- (c) (b) -- (d) (c) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_10$}
-    \end{minipage}
-    \hspace{0.015\textwidth}
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \begin{tikzpicture}[scale=1]
-            \node (a) at (2,2) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,2) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (2,0) [circle,fill,inner sep=1.5pt] {};
-            \draw (a) -- (b) (a) -- (c) (b) -- (c) (c) -- (d) (b) -- (d) (a) -- (d);
-        \end{tikzpicture}
-        \caption{Gráfica $G_11$}
-    \end{minipage}
-\end{figure}
-
-Parece haber un patrón en la forma de dibujar las gŕaficas:\\
-
-Para 0 y 6 aristas se tiene una sola posibilidad de gráfica. Lo mismo sucede para las graficas de 1 y 5 aristas.\\
-
-Ahora, para las gráficas de 2 y 4 aristas se tienen dos posibilidades de gráfica para cada una. Ya sea añadiendo una arista a la grafica de secuencia
-de grados $[1, 1, 0, 0]$, vemos que podemos añadir la nueva arista tal que
-tenga un extremo en un vértice con $d(V(G)) = 1$ o $d(V(G)) = 0$, 
-de forma que no repitan las aristas existentes, de ahí las 2 posibilidades de graficas.\\
-
-Este proceso aplica para la gráfica de 5 aristas, cuya secuencia de grados es $[3, 3, 2, 2,]$, vemos
-que podemos aliminar una arista tal que tenga un extremo en un vértice con $d(V_g) = 2$ o $d(V_g) = 3$\\
-
-De las gráficas anteriormente obtenidas, ya sea quitando o añadiendo aristas, 
-ahora tendremos secuencias de grados con tres posibilidades para colocar nuevas aristas,
-de ahí que para 3 aristas tenemos 3 posibles gráficas.\\
 \vspace{1cm}
 
 %
 % Ejercicio 2
 %
-\textbf{2.} Sean $G$ y $H$ gráficas.
-\\
-\\
-\textbf{a)} Demuestre que $G$ es isomorfa a $H$ si y sólo si $\overline{G}$ es isomorfa a $\overline{H}$.\\
-$\Rightarrow)$
+\textbf{2.} Demuestre que si $G$ tiene diámetro mayor que 3, entonces $\overline{G}$ tiene diámetro menor que 3.
+
 \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
     $G$ es isomorfa a $H$.
 \end{tcolorbox}
@@ -225,30 +67,6 @@ $\Rightarrow)$
     \[E(\overline{G}) = \{ uv \in V(G) \times V(G) \mid uv \notin E(G)\}\]
 \end{tcolorbox}
 
-$P.D$.
-\[\overline{G} \cong \overline{H}\]
-Tenemos que encontrar una función $?$ que satisfaga la definición de isomorfismo para $\overline{G}$ y $\overline{H}$.\\
-Como por nuestra Hipotesis sabemos que $G \cong H$ entonces existe una funcion $\varphi$ biyectiva.\\
-\\
-Por definición de complemento de una gráfica, tenemos que:
-\[V(\overline{G}) = V(G) \text{ y } V(\overline{H}) = V(H)\] 
-y
-\[E(\overline{G}) = \{ uv \in V(G) \times V(G) \mid uv \notin E(G)\} \text{ y } E(\overline{H}) = \{ uv \in V(H) \times V(H) \mid uv \notin E(H)\}\]
-\\
-Con ello podemos proponer la misma función $\varphi$ para el isomorfismo de $\overline{G}$ y $\overline{H}$, ya que por definición de complemento $V(G) = V(\overline{G})$ y $V(H) = V(\overline{H})$,
-tenemos aśi que:
-\[\varphi: V(\overline{G}) \rightarrow V(\overline{H})\]
-que cumple, de nuevo por definición de complemento:
-\[\text{Si } uv \notin E(G) \Longleftrightarrow \varphi(u)\varphi(v) \notin E(H) \]
-\[\text{entonces, por def. de complemento } uv \in E(\overline{G}) \Longleftrightarrow \varphi(u)\varphi(v) \in E(\overline{H})\]
-\\
-Por lo tanto, $\overline{G} \cong \overline{H}$. 
-\\
-\\
-$\Leftarrow)$\\
-La demostración es analoga a la anterior, simplemente intercambiando $V(G)$ por $V(\overline{G})$ y $V(H)$ por $V(\overline{H})$.
-\\
-\\
 \textbf{b)} Usando la definición de conexidad vista en clase, demuestre que si $G$ es inconexa,
 entonces $\overline{G}$ es conexa.
 \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
@@ -258,14 +76,7 @@ entonces $\overline{G}$ es conexa.
     $Def$. Una grafica $G$ es \textbf{conexa} si para cualquier partición $(X,Y)$ de $V(G)$, existe al menos una arista con un extremo
     en $X$ y el otro en $Y$.
 \end{tcolorbox}
-$P.D.$ \[\overline{G} \text{ es conexa.}\]
-Sea una gráfica $G$ inconexa, bajo cualquier partición $(X,Y)$ de $V(G)$, no existe una arista
-con un extremo en $X$ y el otro en $Y$.\\
-\\
-De lo anterior, aseguramos que el complemento de $G$, denotado por $\overline{G}$, debe ser conexa, ya que bajo la partición $(X,Y)$ de $V(G)$
-existe al menos una arista con un extremo en $X$ y el otro en $Y$.\\
-\\
-Por lo tanto, $\overline{G}$ es conexa.
+
 \vspace{1cm}
 
 %
