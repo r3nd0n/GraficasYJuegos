@@ -301,29 +301,40 @@ De esta manera aseguramos que la gráfica $BL_n$ es bipartita para cualquier $n 
 %
 % Ejercicio 5
 %
-\textbf{5.} El algoritmo de Euclides es uno de los algoritmos más antiguos que sigue siendo usado hoy en
-día. Este se basa en el hecho que el máximo común divisor de dos números $a$ y $b$ con $a > b$, es igual
-al máximo común divisor de $b$ y $a \bmod b$.\\
+\textbf{5.} 
 
-\begin{tcolorbox}[title=\textbf{Pseudocódigo del Algoritmo de Euclides (Iterativo)}, colback=gray!10!white, colframe=black!]
-    \begin{verbatim}
-        Algoritmo Euclides(a, b)
-            mientras b != 0 hacer
-                temp ← b
-                b ← a mod b
-                a ← temp
-            retornar a
-    \end{verbatim}
+%
+% Ejercicio 6 
+%
+\textbf{6.} Demuestre que si $\mid E \mid \geq\mid V \mid$, entonces G contiene un ciclo.
+
+\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
+    $\mid E \mid \geq \mid V \mid$.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\textbf{Pseudocódigo del Algoritmo de Euclides (Recursivo)}, colback=gray!10!white, colframe=black!]
-    \begin{verbatim}
-        Algoritmo Euclides(a, b)
-            si b = 0 entonces
-                retornar a
-            sino
-                retornar Euclides(b, a mod b)
-    \end{verbatim}
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+    $Def$. Un \textbf{ciclo} de tres o mas vértices es una gráfica simple en la que su conjunto de
+    vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y sólo si son consecutivos en el orden.\\
+
+    $Def$. Una \textbf{trayectoria} es una gráfica simple en la que su conjunto de vértices admite un orfen lineal de tal dforma 
+    que dos vértices son adyacentes si y sólo si son consecutivos en el orden.
 \end{tcolorbox}
+
+$P.D$ Existe alguna arista $v_0 v_n \in E(G)$ tal que $v_n v_0 \in E(G)$ para algún orden de vértices cíclico, digamos $M$, con $M \subseteq V(G)$.\\
+
+Sea un orden lineal $(m_0, m_1, m_2, \dots , m_n)$ de vértices de $G$, donde $n = \mid V \mid$, tenemos un atrayectoria si $m_i$ es adyacente a $m_i+1$
+para $i \in \{0, 1, 2, 3, \dots, n\}$.\\
+
+Como se cumplira siempre, por la condición, la existencia de las aristas $m_0 m_1, m_1 m_2, m_2 m_3, \dots , m_{n-1} m_n$ tendremos que 
+$\mid E \mid < \mid V \mid$ pues existen dos vértices en la secuencia que no serán adyacentes entre sí, en este caso $m_0$ y $m_n$. Con lo anterior 
+tendríamos $\mid E \mid = n - 1$.\\
+
+Con ello, si añadimos un arista $m_n m_i$ al conjunto $E(G)$ tal que $i = \{0, 1, 2, \dots, n-2\}$ (usamos $n-2$ pues si permitimos $i = n-1$ esa arista ya existe y no nos sirve).
+Como ya hemos garantizado una trayectoria, cualquier arista $m_n m_i$ que añadamos a $E(G)$ nos garantiza un ciclo en $G$ cuando $\mid E \mid \geq \mid V \mid$.
+
+
+
+
+
 
 \end{document}
