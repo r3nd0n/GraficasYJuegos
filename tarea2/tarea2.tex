@@ -301,7 +301,65 @@ De esta manera aseguramos que la gráfica $BL_n$ es bipartita para cualquier $n 
 %
 % Ejercicio 5
 %
-\textbf{5.} 
+\textbf{5.} Caracterice a las gráficas $k$-regulares para $k \in \{0, 1, 2\}$.
+
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+    $Def$. Una gráfica $G$ es $k$-regular si $d(v) = k$ para cada $v \in V(G)$
+\end{tcolorbox}
+
+\textbf{a) Para $k = 0$}\\
+
+Una gráfica $G$ es $0$-regular si y sólo si $G$ es vacia.\\
+
+$\Longrightarrow)$ Sea $G$ una gráfica $0$-regular, entonces $d(v) = 0$ para cada $v \in V(G)$.\\
+
+De lo anterior deducimos que cada vértice $v$ en el conjunto de vértices $V(G)$ no es extremo 
+de ninguna arista, $i.e$ $E(G) = \varnothing$.\\
+
+Por lo tanto $G$ es vacia.\\
+
+$\Longleftarrow)$ Sea $G$ una gráfica vacia, entonces $E(G) = \varnothing$, entonces no hay aristas entre vertices.\\
+
+Por lo tanto $d(v) = 0$ para todo $v \in V(G)$, así $G$ es $0$-regular\\
+
+\textbf{b) Para $k = 1$}\\
+
+Una gráfica $G$ es $1$-regular si y solo si $G$ es una gráfica $nK_2$ con $n \in \mathbb{N}$\\
+
+$\Longrightarrow)$ Sea $G$ una gráfica $1$-regular, entonces $d(v) = 1$ para cada $v \in V(G)$.\\
+
+De lo anterior deducimos que para cada vértice $v$ existe un único vértice $u$ tal que $uv \in E(G)$, 
+es decir, $G$  es una gráfica $K_2$ cuando $n = 1$.\\
+
+Cuando $n > 1$, entonces por ser $G$ $1$-regular, $G$ es la unión de las $n$ gráficas $K_2$.\\
+
+$\Longleftarrow)$ Sea $G$ una gráfica $nK_2$, entonces $G$ es una gráfica generada por la unión 
+de las $n$ gráficas completas de dos vértices.\\
+
+Como $G$ es la unión de las $n$ gráficas $K_2$, podemos decir que para todo $v \in V(G)$, se cumple que $d(v) = 1$.\\
+
+Por lo tanto $G$ es $1$-regular.\\
+
+\textbf{c) Para $k = 2$} \\
+
+Una Grafica $G$ es $2$-regular si y sólo si cada vértice de $G$ tiene exactamente 2 \textit{vecinos}.\\
+
+$\Longrightarrow)$ Sea $G$ una gráfica $2$-regular, entonces $d(v) = 2$ para cada $v \in V(G)$.\\
+
+Si fuera el caso de un camino $v_1, v_2, v_3$ en $G$, entonces $v_2$ sería el único vértice que tendría 2 vecinos, $v_1$ y $v_3$.\\
+
+De lo anterior, debe ser que $v_1$ y $v_3$ sean vecinos entre si o de algún otro $v_i \in V(G)$ con $i \in \{1, 2, 3, \dots, n\}$.\\
+
+Por lo tanto, cada $v \in V(G)$ tiene exactamente 2 vecinos.\\
+
+$\Longleftarrow)$ Sea $G$ una gráfica tal que cada vértice de $G$ tiene exactamente 2 vecinos.\\
+
+Si $G$ es un ciclo, entonces $G$ es $2$-regular y términamos.\\
+
+en caso de que $G$ no sea un ciclo, entonces sin importar el vértice $v \in V(G)$, siempre va a tener exactamente 2 vecinos.\\
+
+con lo que decimos que $d(v) = 2$ para cada $v \in V(G)$, por lo que $G$ es $2$-regular.\\
+
 
 %
 % Ejercicio 6 
@@ -316,20 +374,20 @@ De esta manera aseguramos que la gráfica $BL_n$ es bipartita para cualquier $n 
     $Def$. Un \textbf{ciclo} de tres o mas vértices es una gráfica simple en la que su conjunto de
     vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y sólo si son consecutivos en el orden.\\
 
-    $Def$. Una \textbf{trayectoria} es una gráfica simple en la que su conjunto de vértices admite un orfen lineal de tal dforma 
+    $Def$. Una \textbf{trayectoria} es una gráfica simple en la que su conjunto de vértices admite un orden lineal de tal forma 
     que dos vértices son adyacentes si y sólo si son consecutivos en el orden.
 \end{tcolorbox}
 
-$P.D$ Existe alguna arista $v_0 v_n \in E(G)$ tal que $v_n v_0 \in E(G)$ para algún orden de vértices cíclico, digamos $M$, con $M \subseteq V(G)$.\\
+$P.D$ Existe alguna arista $v_0 v_n \in E(G)$ tal que $v_n v_0 \in E(G)$ para algún orden de vértices, digamos $M$, con $M \subseteq V(G)$.\\
 
-Sea un orden lineal $(m_0, m_1, m_2, \dots , m_n)$ de vértices de $G$, donde $n = \mid V \mid$, tenemos un atrayectoria si $m_i$ es adyacente a $m_i+1$
+Sea un orden lineal $(m_0, m_1, m_2, \dots , m_n)$ de vértices de $G$, donde $n = \mid V \mid$, tenemos una trayectoria si $m_i$ es adyacente a $m_i+1$
 para $i \in \{0, 1, 2, 3, \dots, n\}$.\\
 
 Como se cumplira siempre, por la condición, la existencia de las aristas $m_0 m_1, m_1 m_2, m_2 m_3, \dots , m_{n-1} m_n$ tendremos que 
 $\mid E \mid < \mid V \mid$ pues existen dos vértices en la secuencia que no serán adyacentes entre sí, en este caso $m_0$ y $m_n$. Con lo anterior 
 tendríamos $\mid E \mid = n - 1$.\\
 
-Con ello, si añadimos un arista $m_n m_i$ al conjunto $E(G)$ tal que $i = \{0, 1, 2, \dots, n-2\}$ (usamos $n-2$ pues si permitimos $i = n-1$ esa arista ya existe y no nos sirve).
+Con ello, si añadimos un arista $m_n m_i$ al conjunto $E(G)$ tal que $i \in \{0, 1, 2, \dots, n-2\}$ (usamos $n-2$ pues si permitimos $i = n-1$ esa arista ya existe y no nos sirve).
 Como ya hemos garantizado una trayectoria, cualquier arista $m_n m_i$ que añadamos a $E(G)$ nos garantiza un ciclo en $G$ cuando $\mid E \mid \geq \mid V \mid$.
 
 
