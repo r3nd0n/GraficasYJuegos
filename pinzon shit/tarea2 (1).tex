@@ -38,39 +38,12 @@
 % Ejercicio 1
 %
 \textbf{1.} Sea $D$ una digráfica de orden $n$. Demuestre que si $D$ no tiene ciclos dirigidos,
-entonces existe un orden total, $v_1 , . . . , v_n$ de $V_D$ , tal que siempre que $(v_i , v_j)$ sea
-una flecha de $D$, se tiene que $i < j$.\\
+entonces existe un orden total, $v1 , . . . , vn$ de $V_D$ , tal que siempre que $(vi , vj)$ sea
+una flecha de $D$, se tiene que $i < j$.
 
 \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
-    $D$ no tiene ciclos dirigidos
+    $G$ es isomorfa a $H$.
 \end{tcolorbox}
-
-\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!, breakable]
-    $Def$. Un \textbf{ciclo dirigido} de tres o más vértices es una digráfica simple en la que su conjunto
-    de vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y
-    sólo si son consecutivos en el orden.
-\end{tcolorbox}
-
-Al trabajar en una digráfica acíclica, recordemos que existe por lo menos un vértice con ingrado cero, 
-de lo contrario, $D$ sería una digráfica con un ciclo dirigido inducido. Tomaremos a dicho vértice como 
-el primero en nuestro orden de vértices debido a que, por definición, no hay ninguna flecha que incida en él. \\
-
-Sea $D$ una digráfica simple, de orden $n$ y acíclica. Si el conjunto de sus vértices esta denotado 
-por $V_D$  = \{$v_1, v_2  . . . , v_n$\}, $i.e$, tienen un orden $n$, podemos suponer que  $v_1 \in V_D$
-y demostramos por inducción que:\\
-
-$(Base)$ Si $D$ tiene solo un vertice, entonces $v_1 \in V_D$ tiene ingrado $d^-(v_1)$ = 0 y, necesariamente, cumple con ser un orden total.\\
-
-$(Hipotesis Inductiva)$ Supongamos que si $D$ tiene $k$ vertices, existe un orden $k$ de la forma 
-$v_1, v_2, \dots, v_k$ tal que si $v_i v_j \in A_D$, por definición sabemos que debe existir $d^-(v_i)$ = 0, que si se cumple, 
-podemos eliminar este vertice y la flecha que sale de él y comprobar para los siguientes dos vertices $(v_j v_j+1)$. 
-En caso contrario, tendremos que probar esto mismo para los dos vertices anteriores $v_i-1 v_i$.\\
-
-$(Paso inductivo)$ Sea $D$ una digrafica con $k + 1$ vertices.\\
-
-Por definción, debe existir un vertice $v_i \in V_D$ con ingrado cero que cumpla con ser el primero en nuestro orden. Por $H.I.$
-si vamos revisando vértice por vértice, si alguno de estos $\{v_i, v_i+1, ..., v_k, v_k+1\}$ cae en tener ingrado $1$ o $0$, llegaremos a nuestro caso base en $v_{k+1}$,
-donde tendremos un orden de la forma $v_k < v_i$. 
 
 \vspace{1cm}
 
@@ -135,7 +108,6 @@ Si la gráfica fuera bipartita completa entonces al  aplicar el complemento de G
 En conclusión,  para todos los casos se cumple que la distancia es menor que 3, por lo tanto el diámetro es menor que 3 y la propiedad se cumple.\\
 
 \vspace{1cm}
-
 %
 % Ejercicio 3
 %
@@ -159,32 +131,167 @@ Sea $G$ una gráfica conexa,cuyo número de vértices sea mínimo 4,  sabemos qu
 %
 % Ejercicio 4
 %
-\textbf{4.} Demuestre que cualesquiera dos trayectorias de longitud máxima en una gráfica
-conexa tienen un vértice en común.\\
+\textbf{4.} Sea $n$ un entero positivo. Definimos la \textit{Retícula Boleana, BL\_n}, como
+la gráfica cuyo conjunto de vértices es el conjunto de todos los posibles subconjuntos
+de $\{1, ..., n\}$, donde dos subconjuntos $X$ y $Y$ son adyacentes si y sólo si su diferencia
+tiene exactamente un elemento.\\
+\\
+\textbf{(a)} Dibuje $BL_1$, $BL_2$, $BL_3$ y $BL_4$.
+\\
 
-\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
-    Existen dos trayectorias de longitud máxima en una gráfica $G$ que es conexa. 
+Para $BL_1$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1\}$, es decir:
+\[V(BL_1) = \{\emptyset, \{1\}\}\]
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+
+            \draw (a) -- (b);
+        \end{tikzpicture}
+        \caption{Gráfica de $BL_1$}
+    \end{minipage}
+\end{figure}
+
+Para $BL_2$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1, 2\}$, es decir:
+\[V(BL_2) = \{\emptyset, \{1\}, \{2\} \{1, 2\}\}\]
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,2) [circle,fill,inner sep=1.5pt] {};
+
+            \draw (a) -- (b) (a) -- (c) (b) -- (d) (c) -- (d);
+        \end{tikzpicture}
+        \caption{Gráfica de $BL_2$}
+    \end{minipage}
+\end{figure}
+
+Para $BL_3$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1, 2, 3\}$, es decir:
+\[V(BL_3) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\},\{1, 2, 3\}\}\]
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (0,2) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (1,2) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (2,2) [circle,fill,inner sep=1.5pt] {};
+            \node (h) at (1,3) [circle,fill,inner sep=1.5pt] {};
+
+            \draw (a) -- (b) (a) -- (c) (a) -- (d) (b) -- (e) (b) --(f) (c) -- (e) (c) -- (g) (d) -- (f) (d) -- (g) (e) -- (h) (f) -- (h) (g) -- (h);
+        \end{tikzpicture}
+        \caption{Gráfica de $BL_3$}
+    \end{minipage}
+\end{figure}
+
+Para $BL_4$ tenemos que el conjunto de vértices $V$ es el conjunto de todos los posibles subconjuntos de $\{1, 2, 3, 4\}$, es decir:
+\[V(BL_4) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{4\}, \{1, 2\}, \{1, 3\}, \{1, 4\}, \{2, 3\}, \{2, 4\},\]
+\[\{3, 4\}, \\\{1, 2, 3\}, \{1, 3, 4\}, \{1, 2, 4\}, \{2, 3, 4\}, \{1, 2, 3, 4\}\}\]
+\newpage
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (2.5,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (3,1) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (4,1) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (0,2) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (1,2) [circle,fill,inner sep=1.5pt] {};
+            \node (h) at (2,2) [circle,fill,inner sep=1.5pt] {};
+            \node (i) at (3,2) [circle,fill,inner sep=1.5pt] {};
+            \node (j) at (4,2) [circle,fill,inner sep=1.5pt] {};
+            \node (k) at (5,2) [circle,fill,inner sep=1.5pt] {};
+            \node (l) at (1,3) [circle,fill,inner sep=1.5pt] {};
+            \node (m) at (2,3) [circle,fill,inner sep=1.5pt] {};
+            \node (n) at (3,3) [circle,fill,inner sep=1.5pt] {};
+            \node (o) at (4,3) [circle,fill,inner sep=1.5pt] {};
+            \node (p) at (2.5,4) [circle,fill,inner sep=1.5pt] {};
+
+            \draw (a) -- (b) (a) -- (c) (a) -- (d) (a) -- (e) (b) -- (f) (b) -- (g) (b) -- (h) (c) -- (f) (c) -- (i) (c) -- (j) (d) -- (g) (d) -- (i) (d) -- (k) (e) -- (h) (e) -- (j) (e) -- (k) (f) -- (l) (f) -- (n) (g) --(l) (g) -- (m) (h) -- (m) (h) -- (n) (i) -- (l) (i) -- (o) (j) -- (n) (j) -- (o) (k) -- (m) (k) -- (o) (l) -- (p) (m) -- (p) (n) -- (p) (o) -- (p);
+        \end{tikzpicture}
+        \caption{Gráfica de $BL_4$}
+    \end{minipage}
+\end{figure}
+
+\textbf{b)} Determine $|V_{BL_n}|$ y $|E_{BL_n}|$ (Demuestre su respuesta).
+
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+    $Def$. Sea $A$ un conjunto, definimos al \textbf{conjunto potencia} de $A$, denotado como $\mathcal{P}(A)$, como el conjunto de todos los subconjuntos de $A$. $i.e$:
+    \[\mathcal{P}(A) = \{X \mid X \subseteq A\}\]
+\end{tcolorbox}
+Como sabemos que $V(BL_n)$ es el conjunto de todos los posibles subconjuntos de $\{1, ..., n\}$, entonces
+podemos verlo como el conjunto potencia de $\{1, ..., n\}$, es decir:
+\[V(BL_n) = \mathcal{P}(\{1, ..., n\})\]
+cuya cardinalidad se define como:
+\[|V(BL_n)| = 2^n\]
+
+Como ya hemos demostrado $|V(BL_n)| = 2^n$. De tal modo que, para saber $|E(BL_n)|$, nos basaremos en la construcción de aristas en la gráfica $BL_n$\\
+
+Por definición de $BL_n$, sabemos que $u$ es adyacente a $v$ si y sólo si su diferencia simétrica tiene exactamente un elemento.\\
+
+Notemos que, sin importar quien sea $n$, $d(\varnothing) = d(\{1, 2, ... , n\}) = n$ es decir, sus grados son iguales.\\
+
+Así podemos ver al conjunto de vértices de la sigueinte manera:
+\[V(BL_n) = \{d(V_1) = n, v_2, ... , d(u) = n \}\]
+
+De esta forma, $| V(BL_n) | = n \times 2^n$
+
+Sin embargo, recordemos que $d(v_i) = n$ solo aplica para los vertices extremos, y con la formula dada, estaríamos asumiendo que todos los vertices de $V(BL_n)$ 
+tienen el mismo grado, es decir, estariamos contado dos veces nuestros \textit{"vertices internos"}, tal que: 
+
+\[V(BL_n) = \{ d(v_1) = n, d(v_2) = n, ..., d(u_n) = n \}\]
+
+Así que, solamente dividimos todo nuestra operación entre 2 y tendríamos que $| E(BL_n) | = (n \times 2^n) / 2$
+O bien, $| E(BL_n) | = n \times 2^(n - 1)$ Así, nos aseguramos de contar bien los vertices de $BL_n$.\\
+ 
+\textbf{c)} Demuestre que $BL_n$ es bipartita para cualquier $n \in \mathbb{Z} \text{ tal que } n > 0$.
+
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+    $Def$. Sea $n$ un entero positivo. la \textbf{Retícula Boleana, BL\_n}, como
+    la gráfica cuyo conjunto de vértices es el conjunto de todos los posibles subconjuntos
+    de $\{1, ..., n\}$, donde dos subconjuntos $X$ y $Y$ son adyacentes si y sólo si su diferencia
+    tiene exactamente un elemento.\\
+
+    $Def.$ Una gráfica $G$ es \textbf{bipartita} si $V(G)$ admite una patición $V = (X, Y)$ tal que $X$ y $Y$ son conjuntos independientes.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!, breakable]
-    $Def$. $G$ es conexa si para todos $u, v \in V$ existe un uv-camino.\\
+$P.D$ $BL_N$ es bipartita para cualquier $N \in \mathbb{Z^+}$.\\
 
-    $Def$. Un trayectoria es un camino que no repite vertices.
-\end{tcolorbox}
+Sean $u,v$ vertices de $V(BL_n)$. Notemos que por definición, los vértices de $BL_n$  tienen cardinalidad par e impar.\\
 
-Sea $G$ una gráfica conexa, en donde existen dos trayectorias P y Q de longitud máxima.\\
+Supongamos que tomamos dos vértices pares $u$ y $v$ de nuestra gŕafica $BL_n$, de tal forma que los podemos representar
+como $\# u  = 2m$ y $\# v = 2t$ donde $m$ y $t$ son enteros positivos.\\
 
-Supongamos que $P \cap Q = \emptyset$, i.e, que nuestras dos trayectorias de longitud máxima no 
-comparten vertices en común. Como sabemos que $G$ es conexa, si tomamos cualquier par de vértices de $P$ y $Q$, 
-digamos $u \in P$ y $v \in Q$, entonces existe un uv-camino en $G$ que los conecta.\\
+Digamos que $m > t$ y $m \neq t$ por lo que $m$ es igual a $t + g$, con $g \in \mathbb{N}$. Sin 
+importar si hacemos la operación $2 m - 2t$ o $2t - 2m$ tendremos que $2 (t + g) - 2t = 2g$ o $2t - 2(t + g) = 2g$ (por conmutatividad de la suma).\\
 
-Imaginemos que $F$ es ese uv-camino que conecta a los vertices que tomamos de forma arbitrariamente 
-de P y Q. Ahora, si consideremos la trayectoria generada al tomar un vertice de $P$ desde uno de sus extremos, digamos $v_i$ hasta $uv$, seguida por el camino dado
-$F$, y luego la parte de $Q$ desde un $u_i$ hasta uno de sus extremos. Esta nueva trayectoria es estrictamente 
-más larga que $P$ y $Q$, lo que contradice la suposición de que $P$ y $Q$ eran de longitud máxima.\\
+Es decir, siempre nos quedara un vértice con cardinalidad par si tratamos de sacar su diferencia simétrica. Analogamente se puede probar lo mismo para los vértices impares.\\
 
-Lo que nos arroja una contradicción, por lo que esto implica que cualquier par de trayectorias de longitud máxima en cualquier gráfica $G$ deben compartir al menos un vértice.\\
+Recordemos que si tenemos un vértice de cardinalidad par o impar estos siempre van a tener al menos una arista por definición de $BL_n$, de 
+tal manera que vamos a tener una partición $(X, Y) en V(BL_n)$ tal que $X \cap Y = \varnothing$ \\
 
+Por lo que en nuestro conjunto de vértices $V(BL_n)$ siempre va a existir una bipartición:
+\[X = \{ x \mid \# x \text{ es par}\} \text{ y}\]
+\[Y = \{ y \mid \# y \text{ es impar}\}\]
+
+De esta manera aseguramos que la gráfica $BL_n$ es bipartita para cualquier $n \in \mathbb{Z^+}$.
 \vspace{1cm}
 
 %
@@ -261,8 +368,6 @@ Por lo tanto $G$ es $1$-regular.\\
     \end{minipage}
 \end{figure}
 
-\newpage
-
 \textbf{c) Para $k = 2$} \\
 
 Una Grafica $G$ es $2$-regular si y sólo si cada vértice de $G$ tiene exactamente 2 \textit{vecinos}.\\
@@ -316,31 +421,25 @@ Por lo tanto $G$ es $2$-regular.\\
     $Def$. Un \textbf{ciclo} de tres o mas vértices es una gráfica simple en la que su conjunto de
     vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y sólo si son consecutivos en el orden.\\
 
-    $Def$ Una gráfica es \textbf{regular} si es $k$-regular para algún $k \in \mathbb{N}$.
+    $Def$. Una \textbf{trayectoria} es una gráfica simple en la que su conjunto de vértices admite un orden lineal de tal forma 
+    que dos vértices son adyacentes si y sólo si son consecutivos en el orden.
 \end{tcolorbox}
 
-$Dem.$ $por$ $casos$\\
+$P.D$ Existe alguna arista $v_0 v_n \in E(G)$ tal que $v_n v_0 \in E(G)$ para algún orden de vértices, digamos $M$, con $M \subseteq V(G)$.\\
 
-Caso1. $G$ es una gráfica regular, $i.e$ es $k$-regular con $k \in \mathbb{N} - \{0,1\}$\\
+Sea un orden lineal $(m_0, m_1, m_2, \dots , m_n)$ de vértices de $G$, donde $n = \mid V \mid$, tenemos una trayectoria si $m_i$ es adyacente a $m_i+1$
+para $i \in \{0, 1, 2, 3, \dots, n\}$.\\
 
-Si fuera que todos los $v \in V$ tienen grado $d(v) \geq 2$, entonces $G$ contiene un ciclo, o bien es un $C_n$, de ser así hemos terminado
-y concluimos que $G$ contiene un ciclo.\\
+Como se cumplira siempre, por la condición, la existencia de las aristas $m_0 m_1, m_1 m_2, m_2 m_3, \dots , m_{n-1} m_n$ tendremos que 
+$\mid E \mid < \mid V \mid$ pues existen dos vértices en la secuencia que no serán adyacentes entre sí, en este caso $m_0$ y $m_n$. Con lo anterior 
+tendríamos $\mid E \mid = n - 1$.\\
 
-Caso2. $G$ no es regular.\\
+Con ello, si añadimos un arista $m_n m_i$ al conjunto $E(G)$ tal que $i \in \{0, 1, 2, \dots, n-2\}$ (usamos $n-2$ pues si permitimos $i = n-1$ esa arista ya existe y no nos sirve).
+Como ya hemos garantizado una trayectoria, cualquier arista $m_n m_i$ que añadamos a $E(G)$ nos garantiza un ciclo en $G$ cuando $\mid E \mid \geq \mid V \mid$.
 
-Supongamos que $G$ no es regular, entonces demostraremos por inducción fuerte sobre $n$, con $n$ 
-el número de vértices de $G$, que cualquier gráfica con $\mid E(G) \mid \geq \mid V(G) \mid$ contiene un ciclo.\\
 
-Cuando $n = 3$, como debe ser $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ en un $C_3$ y por lo tanto hay un ciclo en $G$.\\
 
-Si a la gráfica de nuestro caso base le añadimos un vértice, por la condición de $\mid E(G) \mid \geq \mid V(G) \mid$
-tendremos que añadir uno o mas vértices, llamemosles $v'$, enotnces $v'$ se va volver vecino 
-de algún $v \in V(G)$ que a su vez tiene grado 2, por lo tanto, la nueva grafica $G'$, generada de añadirle un vértice 
-a $G$, contiene un ciclo.\\
 
-Para cualquier cantidad $n$ de vértices $v^{\ast}$ que se añadan a $G'$, entonces tendremos que en $G^{\ast}$ habrá al menos
-un ciclo de 3 vértices o, en caso de que $v^{\ast}$ sea vecino de mas de un $v' \in V(G')$ tendremos múltiples ciclos.\\
 
-Por lo tanto concluimos que cuando $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ contiene al menos un ciclo
-de tres vértices o más.\\
+
 \end{document}
