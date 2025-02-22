@@ -425,21 +425,30 @@ Por lo tanto $G$ es $2$-regular.\\
     $Def$. Un \textbf{ciclo} de tres o mas vértices es una gráfica simple en la que su conjunto de
     vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y sólo si son consecutivos en el orden.\\
 
-    $Def$. Una \textbf{trayectoria} es una gráfica simple en la que su conjunto de vértices admite un orden lineal de tal forma 
-    que dos vértices son adyacentes si y sólo si son consecutivos en el orden.
+    $Def$ Una gráfica es \textbf{regular} si es $k$-regular para algún $k \in \mathbb{N}$.
 \end{tcolorbox}
 
-$P.D$ Existe alguna arista $v_0 v_n \in E(G)$ tal que $v_n v_0 \in E(G)$ para algún orden de vértices, digamos $M$, con $M \subseteq V(G)$.\\
+$Dem.$ $por$ $casos$\\
 
-Sea un orden lineal $(m_0, m_1, m_2, \dots , m_n)$ de vértices de $G$, donde $n = \mid V \mid$, tenemos una trayectoria si $m_i$ es adyacente a $m_i+1$
-para $i \in \{0, 1, 2, 3, \dots, n\}$.\\
+Caso1. $G$ es una gráfica regular, $i.e$ es $k$-regular con $k \in \mathbb{N} - \{0,1\}$\\
 
-Como se cumplira siempre, por la condición, la existencia de las aristas $m_0 m_1, m_1 m_2, m_2 m_3, \dots , m_{n-1} m_n$ tendremos que 
-$\mid E \mid < \mid V \mid$ pues existen dos vértices en la secuencia que no serán adyacentes entre sí, en este caso $m_0$ y $m_n$. Con lo anterior 
-tendríamos $\mid E \mid = n - 1$.\\
+Si fuera que todos los $v \in V$ tienen grado $d(v) \geq 2$, entonces $G$ contiene un ciclo, o bien es un $C_n$, de ser así hemos terminado
+y concluimos que $G$ contiene un ciclo.\\
 
-Con ello, si añadimos un arista $m_n m_i$ al conjunto $E(G)$ tal que $i \in \{0, 1, 2, \dots, n-2\}$ (usamos $n-2$ pues si permitimos $i = n-1$ esa arista ya existe y no nos sirve).
-Como ya hemos garantizado una trayectoria, cualquier arista $m_n m_i$ que añadamos a $E(G)$ nos garantiza un ciclo en $G$ cuando $\mid E \mid \geq \mid V \mid$.
+Caso2. $G$ no es regular.\\
+
+Supongamos que $G$ no es regular, entonces demostramos por inducción fuerte sobre $n$ con $n$ 
+el número de vértices de $G$.\\
+
+Cuando $n = 3$, como debe ser $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ en un $C_3$ y por lo tanto hay un ciclo en $G$.\\
+
+si a nuestro caso base le añadimos un vértice, llamemosle $v'$, enotnces $v'$ se va volver vecino 
+de algún $v \in V(G)$ que a su vez tiene grado 2, por lo tanto, la nueva grafica $G'$, generada de añadirle un vértice 
+a $G$, contiene un ciclo.\\
+
+Para cualquier cantidad $n$ de vértices $v^{\ast}$ que se añadan a $G'$, entonces tendremos que en $G^{\ast}$ habrá al menos
+un ciclo de 3 vértices o, en caso de que $v^{\ast}$ sea vecino de mas de un $v' \in V(G')$ tendremos múltiples ciclos.
+
 
 
 
