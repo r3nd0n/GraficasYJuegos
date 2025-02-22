@@ -38,12 +38,41 @@
 % Ejercicio 1
 %
 \textbf{1.} Sea $D$ una digráfica de orden $n$. Demuestre que si $D$ no tiene ciclos dirigidos,
-entonces existe un orden total, $v1 , . . . , vn$ de $V_D$ , tal que siempre que $(vi , vj)$ sea
+entonces existe un orden total, $v_1 , . . . , v_n$ de $V_D$ , tal que siempre que $(v_i , v_j)$ sea
 una flecha de $D$, se tiene que $i < j$.
 
-\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
-    $G$ es isomorfa a $H$.
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!, breakable]
+    $Def$. Un ciclo dirigido de tres o más vértices es una digráfica simple en la que su conjunto
+    de vértices admite un orden cíclico de tal forma que dos vértices son adyacentes si y
+    sólo si son consecutivos en el orden.
 \end{tcolorbox}
+
+\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
+    $D$ no tiene ciclos dirigidos
+\end{tcolorbox}
+
+Al trabajar en una digráfica acíclica, recordemos que existe por lo menos un vertice con ingrado cero, 
+de lo contrario, D sería una digráfica con un ciclo dirigido inducido. Tomaremos a dicho vertice como el primero en nuestro orden 
+de vertices debido a que, por definición, no hay ninguna flecha que incida en él. \\
+
+Sea $D$ una digráfica simple, de orden $n$ y acíclica. Si el conjunto de sus vertices esta denotado 
+por $V_D$  = \{$v_1, v_2  . . . , v_n$\}, i.e, tienen un orden $n$, podemos suponer que  $v_1 \in V_D $
+ y demostramos por inducción que:\\
+
+(Base) Si $D$ tiene solo un vertice, entonces $v_1 \in V_D$ tiene ingrado $d^-(v_1)$ = 0 y, necesariamente, cumple con ser un orden total.\\
+
+(Hipotesis Inductiva) Supongamos que si $D$ tiene $k$ vertices, existe un orden $k$ de la forma 
+$v_1, v_2, \dots, v_k$ tal que si $v_i v_j \in A_D$, por definición sabemos que debe existir $d^-(v_i)$ = 0, que si se cumple, 
+podemos eliminar este vertice y la flecha que sale de él y comprobar para los siguientes dos vertices ($v_j v_j+1). 
+En caso contrario, tendremos que probar esto mismo para los dos vertices anteriores $v_i-1 v_i.
+
+(Paso inductivo) Sea $D$ una digrafica con $k + 1$ vertices.
+
+Por definción, debe existir un vertice $v_i \in V_D$ con ingrado cero que cumpla con ser el primero en nuestro orden. Por H.I.
+si vamos checando vertice por vertice si alguno de estos $\{v_i, v_i+1, ..., v_k, v_k+1\}$ cae en tener ingrado 1 o 0, llegaremos a nuestro caso base en v_k+1,
+donde tendremos un orden de la forma v_k < v_i. 
+
+
 
 \vspace{1cm}
 
