@@ -442,10 +442,14 @@ el número de vértices de $G$, que cualquier gráfica con $\mid E(G) \mid \geq 
 
 Cuando $n = 3$, como debe ser $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ en un $C_3$ y por lo tanto hay un ciclo en $G$.\\
 
-si a la gráfica de nuestro caso base le añadimos un vértice, llamemosle $v'$, enotnces $v'$ se va volver vecino 
+Si a la gráfica de nuestro caso base le añadimos un vértice, por la condición de $\mid E(G) \mid \geq \mid V(G) \mid$
+tendremos que añadir uno o mas vértices, llamemosles $v'$, enotnces $v'$ se va volver vecino 
 de algún $v \in V(G)$ que a su vez tiene grado 2, por lo tanto, la nueva grafica $G'$, generada de añadirle un vértice 
 a $G$, contiene un ciclo.\\
 
 Para cualquier cantidad $n$ de vértices $v^{\ast}$ que se añadan a $G'$, entonces tendremos que en $G^{\ast}$ habrá al menos
-un ciclo de 3 vértices o, en caso de que $v^{\ast}$ sea vecino de mas de un $v' \in V(G')$ tendremos múltiples ciclos.
+un ciclo de 3 vértices o, en caso de que $v^{\ast}$ sea vecino de mas de un $v' \in V(G')$ tendremos múltiples ciclos.\\
+
+Por lo tanto concluimos que cuando $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ contiene al menos un ciclo
+de tres vértices o más.\\
 \end{document}
