@@ -322,6 +322,21 @@ $\Longleftarrow)$ Sea $G$ una gráfica vacia, entonces $E(G) = \varnothing$, ent
 
 Por lo tanto $d(v) = 0$ para todo $v \in V(G)$, así $G$ es $0$-regular\\
 
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,2) [circle,fill,inner sep=1.5pt] {};
+
+        \end{tikzpicture}
+        \caption{Representación de una gráfica $0$-regular}
+    \end{minipage}
+\end{figure}
+
 \textbf{b) Para $k = 1$}\\
 
 Una gráfica $G$ es $1$-regular si y solo si $G$ es una gráfica $nK_2$ con $n \in \mathbb{N}$\\
@@ -340,26 +355,62 @@ Como $G$ es la unión de las $n$ gráficas $K_2$, podemos decir que para todo $v
 
 Por lo tanto $G$ es $1$-regular.\\
 
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,2) [circle,fill,inner sep=1.5pt] {};
+
+            \draw (a) -- (b) (c) -- (d) ;
+
+        \end{tikzpicture}
+        \caption{Representación de una gráfica $1$-regular}
+    \end{minipage}
+\end{figure}
+
 \textbf{c) Para $k = 2$} \\
 
 Una Grafica $G$ es $2$-regular si y sólo si cada vértice de $G$ tiene exactamente 2 \textit{vecinos}.\\
 
 $\Longrightarrow)$ Sea $G$ una gráfica $2$-regular, entonces $d(v) = 2$ para cada $v \in V(G)$.\\
 
-Si fuera el caso de un camino $v_1, v_2, v_3$ en $G$, entonces $v_2$ sería el único vértice que tendría 2 vecinos, $v_1$ y $v_3$.\\
+Como por ser $d(v) = 2$, no puede pasar que $v$ sea adyacente a un vértice $u$ y no sea adyacente 
+a algún otro vértice $w$, por lo que todo vértice $v \in V(G)$ deber ser adyacente a algún otro vértice $u$ y $w$
+de forma que $uv \in E(G)$ y $vw \in E(G)$.\\
 
-De lo anterior, debe ser que $v_1$ y $v_3$ sean vecinos entre si o de algún otro $v_i \in V(G)$ con $i \in \{1, 2, 3, \dots, n\}$.\\
+por lo tanto $\forall v \in V(G)$, se cumple $v$ tiene exactamente 2 vecinos.\\
 
-Por lo tanto, cada $v \in V(G)$ tiene exactamente 2 vecinos.\\
+$\Longleftarrow)$ sea $G$ una gráfica tal que cada vértice de $G$ tiene exactamente 2 vecinos.\\
 
-$\Longleftarrow)$ Sea $G$ una gráfica tal que cada vértice de $G$ tiene exactamente 2 vecinos.\\
+Como cada vértice $v \in V(G)$ tiene exactamente 2 vecinos, entonces $d(v) = 2$ para todo $v \in V(G)$.\\
 
-Si $G$ es un ciclo, entonces $G$ es $2$-regular y términamos.\\
+Por lo tanto $G$ es $2$-regular.\\
 
-en caso de que $G$ no sea un ciclo, entonces sin importar el vértice $v \in V(G)$, siempre va a tener exactamente 2 vecinos.\\
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (1,2) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (2,0) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (2,2) [circle,fill,inner sep=1.5pt] {};
+            \node (h) at (3,1) [circle,fill,inner sep=1.5pt] {};
 
-con lo que decimos que $d(v) = 2$ para cada $v \in V(G)$, por lo que $G$ es $2$-regular.\\
 
+            \draw (a) -- (b) (b) -- (c) (c) -- (d) (a) -- (d) (e) -- (f) (f) -- (g) (g) -- (h) (e) -- (h);
+
+        \end{tikzpicture}
+        \caption{Representación de una gráfica $2$-regular}
+    \end{minipage}
+\end{figure}
 
 %
 % Ejercicio 6 
