@@ -437,22 +437,15 @@ y concluimos que $G$ contiene un ciclo.\\
 
 Caso2. $G$ no es regular.\\
 
-Supongamos que $G$ no es regular, entonces demostramos por inducción fuerte sobre $n$ con $n$ 
-el número de vértices de $G$.\\
+Supongamos que $G$ no es regular, entonces demostraremos por inducción fuerte sobre $n$, con $n$ 
+el número de vértices de $G$, que cualquier gráfica con $\mid E(G) \mid \geq \mid V(G) \mid$ contiene un ciclo.\\
 
 Cuando $n = 3$, como debe ser $\mid E(G) \mid \geq \mid V(G) \mid$, entonces $G$ en un $C_3$ y por lo tanto hay un ciclo en $G$.\\
 
-si a nuestro caso base le añadimos un vértice, llamemosle $v'$, enotnces $v'$ se va volver vecino 
+si a la gráfica de nuestro caso base le añadimos un vértice, llamemosle $v'$, enotnces $v'$ se va volver vecino 
 de algún $v \in V(G)$ que a su vez tiene grado 2, por lo tanto, la nueva grafica $G'$, generada de añadirle un vértice 
 a $G$, contiene un ciclo.\\
 
 Para cualquier cantidad $n$ de vértices $v^{\ast}$ que se añadan a $G'$, entonces tendremos que en $G^{\ast}$ habrá al menos
 un ciclo de 3 vértices o, en caso de que $v^{\ast}$ sea vecino de mas de un $v' \in V(G')$ tendremos múltiples ciclos.
-
-
-
-
-
-
-
 \end{document}
