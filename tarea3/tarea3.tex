@@ -42,7 +42,7 @@
 % Ejercicio 1
 %
 \textbf{1.} Sea $G$ una gáfica, y recuerde que $c_G$ denota al número de componentes conexas de $G$.
-Demuestre que si $e \in E$, entonces $C_G \leq c_{G - e} \leq c_G + 1$.\\
+Demuestre que si $e \in E$, entonces $c_G \leq c_{G - e} \leq c_G + 1$.\\
 
 \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
 
@@ -94,25 +94,111 @@ la tarea anterior puede resultar de utilidad.)
 % Ejercicio 4
 %
 \textbf{4.}
-
-
 \begin{enumerate}[label=\alph*)]
 
-    \item Demuestre que si $\delta > |V| - 1$, entonces $G$ es conexa.
+    \item Demuestre que si $\delta >  \left( \left\lfloor \frac{|V|}{2} \right\rfloor - 1 \right)$, entonces $G$ es conexa.
     \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
-
+        El grado minimo $\delta$ de $G$ es mayor a $\left( \left\lfloor \frac{|V|}{2} \right\rfloor - 1 \right)$.
     \end{tcolorbox}
-    \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+
+        Sea $G$ una gráfica cuyo grado minimo es $\delta > \left( \left\lfloor \frac{|V|}{2} \right\rfloor - 1 \right)$, entonces
+        podemos decir quev $\delta \geq  \left\lfloor \frac{|V|}{2} \right\rfloor - 1 + 1$, es decir:
+
+        \begin{center}
+        $\delta \geq  \left\lfloor \frac{|V|}{2} \right\rfloor$
+        \end{center}
+
+        Supongamos que hay un subconjunto $S \in V(G)$ que satisface $|S| = |V| - 2$ y en cualesqueira  dos vértices $u$ y $v$ que pertenecen a $V(G)$ y no pertenecen a $S$.\\
+
+        Pensemos enotnces en una $uv$-trayectoria $P$ en $G$:
+
+        \begin{center}
+        $P = (u, s_1, s_2, \dots, s_k, v)$
+        \end{center}
+
+
+        Como sabemos que $u, v \notin S$. Si es que $u$ es adyacente 
+        a $\frac{|S|}{2}$ elementos $s \in S$ y $v$ es adyacente a $\frac{|S|}{2}$ elementos $s' \in S$. Como por hipotesis sabemos que 
+        $d(u), d(v) \geq \left\lfloor \frac{|V|}{2} \right\rfloor$, entonces debe haber un $s_i$ en $S$ tal que 
+        $s_i = s_k = s'_k$, por lo que podemos grantizar una $uv$- trayectoria $P'$:
+        
+        \begin{center}
+            $P' = (u, s_k = s_i = s'_k, v)$
+        \end{center}
+
+        para cada $u, v \in V(G)$. Por lo tanto $G$ es conexa.\\
+
+    \item Para $|V|$ par encuentre una gráfica $\left( \left\lfloor \frac{|V|}{2} \right\rfloor - 1 \right)$-regular e inconexa.\\
+
+        Como podemos ver de dibujar las gráficas para $|V| = 2, |V| = 4, |V| = 6$ y $|V| = 8$\\
+
     
-    \end{tcolorbox}
+%Primera fila de graficas
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
 
-    \item PAra $|V|$ par encuentre una gráfica $()$-regular e inconexa.
-    \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de una gráfica $0$-regular de 2 vértices}
+    \end{minipage}
+    \hspace{0.015\textwidth}
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
 
-    \end{tcolorbox}
-    \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
-    
-    \end{tcolorbox}
+            \draw (a) -- (b) (c) -- (d);
+
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de una gráfica $1$-regular de 4 vértices}
+    \end{minipage}
+    \hspace{0.015\textwidth}
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (2,0) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (2,1) [circle,fill,inner sep=1.5pt] {};
+
+
+            \draw (a) -- (b) (a) -- (c) (b) -- (c) (d) -- (e) (d) -- (f) (e) -- (f);
+
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de una gráfica $2$-regular de 6 vértices}
+    \end{minipage}
+    \hspace{0.015\textwidth}
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (2,0) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (3,0) [circle,fill,inner sep=1.5pt] {};
+            \node (h) at (3,1) [circle,fill,inner sep=1.5pt] {};
+
+
+            \draw (a) -- (b) (a) -- (c) (b) -- (d) (d) -- (c) (a) -- (d) (b) -- (c) (e) -- (f) (f) -- (g) (g) -- (h) (e) -- (g) (f) -- (h) (e) -- (h);
+
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de una gráfica $3$-regular de 6 vértices}
+    \end{minipage}
+\end{figure}
+
+    Podemos decir que las gráficas que representan la condición son las $2k_n$ con $n \geq 1$ y $n \in \mathbb{N}$.
+
 \end{enumerate}
 
 \vspace{1cm}
@@ -120,11 +206,11 @@ la tarea anterior puede resultar de utilidad.)
 %
 % Ejercicio 5
 %
-\textbf{5.} Demuestre que si $D$ no tiene lazos y $\delta^+ \geq 1$, entonce s$D$ contiene un ciclo dirigido de longitus
+\textbf{5.} Demuestre que si $D$ no tiene lazos y $\delta^+ \geq 1$, entonces $D$ contiene un ciclo dirigido de longitud 
 al menos $\delta^+ + 1$.\\
 
 \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
-
+    $Def$.  
 \end{tcolorbox}
 
 
