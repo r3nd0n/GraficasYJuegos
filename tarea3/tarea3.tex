@@ -108,25 +108,71 @@ la tarea anterior puede resultar de utilidad.)
         $\delta \geq  \left\lfloor \frac{|V|}{2} \right\rfloor$
         \end{center}
 
-        Supongamos que hay un subconjunto $S \in V(G)$ que satisface $|S| = |V| - 2$ y en cualesqueira  dos vértices $u$ y $v$ que pertenecen a $V(G)$ y no pertenecen a $S$.\\
-
-        Pensemos enotnces en una $uv$-trayectoria $P$ en $G$:
-
-        \begin{center}
-        $P = (u, s_1, s_2, \dots, s_k, v)$
-        \end{center}
-
+        Si $S$ es un subconjunto de $ V(G)$ que satisface $|S| = |V| - 2$ y $u$, $v$ dos vértices
+        que pertenecen a $V(G)$ y no pertenecen a $S$.\\
 
         Como sabemos que $u, v \notin S$. Si es que $u$ es adyacente 
-        a $\frac{|S|}{2}$ elementos $s \in S$ y $v$ es adyacente a $\frac{|S|}{2}$ elementos $s' \in S$. Como por hipotesis sabemos que 
-        $d(u), d(v) \geq \left\lfloor \frac{|V|}{2} \right\rfloor$, entonces debe haber un $s_i$ en $S$ tal que 
-        $s_i = s_k = s'_k$, por lo que podemos grantizar una $uv$- trayectoria $P'$:
+        a $\frac{|S|}{2}$ elementos $s \in S$ y $v$ es adyacente a $\frac{|S|}{2}$ elementos $s' \in S$.
+        Como sabemos que $|S| = |V| - 2$, así $u$ es adyacente a $\frac{|V| - 2}{2}$ elementos $s \in S$ y $v$ es adyacente a
+        $\frac{|V| - 2}{2}$ elementos $s' \in S$.\\
+
+        Como por hipotesis sabemos que $d(u), d(v) \geq \left\lfloor \frac{|V|}{2} \right\rfloor$, entonces cuando
+        $|V|$ es impar debe haber un $s_i$ en $S$ tal que $u$ es adyacente a $s_i$ y también $v$ es adyacente a $s_i$, 
+        mientras que cuando $|V|$ es par existen al menos un $s_i$ y un $s_j$ a los cuales $u$ y $v$ son adyacentes.
+        Por lo que podemos grantizar una $uv$- trayectoria $P$:
         
         \begin{center}
-            $P' = (u, s_k = s_i = s'_k, v)$
+            $P = (u, s_k = s_i = s'_k, v)$ cuando $|V|$ es par e impar y\\
+
+            $P' = (u, s_k = s_j = s'_k, v)$, cuando $|V|$ es par
         \end{center}
 
         para cada $u, v \in V(G)$. Por lo tanto $G$ es conexa.\\
+        \begin{figure}[h!]
+
+        \centering
+        \begin{minipage}{0.2\textwidth}
+            \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (2,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,2) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (2,3) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (2,4) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (2,5) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (2,6) [circle,fill,inner sep=1.5pt] {};
+            \node (h) at (2,7) [circle,fill,inner sep=1.5pt] {};
+
+            \node (u) at (0,3.5) [circle,fill,inner sep=1.5pt, color=red] {};
+            \node (v) at (4,3.5) [circle,fill,inner sep=1.5pt, color=blue] {};
+            \draw (u) -- (a) (u) -- (b) (u) -- (c) (u) -- (d) (u) -- (e) (v) -- (e) (v) -- (f) (v) -- (g) (v) -- (h) (v) -- (d)
+            (a) -- (b) (b) -- (c) (c) -- (d) (d) -- (e) (e) -- (f) (f) -- (g) (g) -- (h);
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de $G$ cuando $|V|$ es par, suponiendo que la columna central son adaycentes cualesqueira 2 vértices}
+
+       \end{minipage}
+        \hspace{0.1\textwidth}
+        \begin{minipage}{0.2\textwidth}
+            \centering
+        \begin{tikzpicture}[scale=1]
+            \node (a) at (2,0) [circle,fill,inner sep=1.5pt] {};
+            \node (b) at (2,1) [circle,fill,inner sep=1.5pt] {};
+            \node (c) at (2,2) [circle,fill,inner sep=1.5pt] {};
+            \node (d) at (2,3) [circle,fill,inner sep=1.5pt] {};
+            \node (e) at (2,4) [circle,fill,inner sep=1.5pt] {};
+            \node (f) at (2,5) [circle,fill,inner sep=1.5pt] {};
+            \node (g) at (2,6) [circle,fill,inner sep=1.5pt] {};
+
+            \node (u) at (0,3) [circle,fill,inner sep=1.5pt, color=red] {};
+            \node (v) at (4,3) [circle,fill,inner sep=1.5pt, color=blue] {};
+            \draw (u) -- (a) (u) -- (b) (u) -- (c) (u) -- (d) (v) -- (e) (v) -- (f) (v) -- (g)  (v) -- (d)
+            (a) -- (b) (b) -- (c) (c) -- (d) (d) -- (e) (e) -- (f) (f) -- (g);
+
+        \end{tikzpicture}
+        \caption{\scriptsize Representación de $G$ cuando $|V|$ es impar}
+       \end{minipage}
+
+        \end{figure}
 
     \item Para $|V|$ par encuentre una gráfica $\left( \left\lfloor \frac{|V|}{2} \right\rfloor - 1 \right)$-regular e inconexa.\\
 
@@ -139,7 +185,7 @@ la tarea anterior puede resultar de utilidad.)
     \begin{minipage}{0.2\textwidth}
         \centering
         \begin{tikzpicture}[scale=1]
-            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=red] {};
             \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
 
         \end{tikzpicture}
@@ -149,8 +195,8 @@ la tarea anterior puede resultar de utilidad.)
     \begin{minipage}{0.2\textwidth}
         \centering
         \begin{tikzpicture}[scale=1]
-            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt,color=red] {};
             \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
             \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
 
@@ -163,9 +209,9 @@ la tarea anterior puede resultar de utilidad.)
     \begin{minipage}{0.2\textwidth}
         \centering
         \begin{tikzpicture}[scale=1]
-            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (c) at (1,0) [circle,fill,inner sep=1.5pt,color=red] {};
             \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
             \node (e) at (2,0) [circle,fill,inner sep=1.5pt] {};
             \node (f) at (2,1) [circle,fill,inner sep=1.5pt] {};
@@ -180,10 +226,10 @@ la tarea anterior puede resultar de utilidad.)
     \begin{minipage}{0.2\textwidth}
         \centering
         \begin{tikzpicture}[scale=1]
-            \node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
-            \node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
-            \node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
-            \node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (b) at (0,1) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (c) at (1,0) [circle,fill,inner sep=1.5pt,color=red] {};
+            \node (d) at (1,1) [circle,fill,inner sep=1.5pt,color=red] {};
             \node (e) at (2,0) [circle,fill,inner sep=1.5pt] {};
             \node (f) at (2,1) [circle,fill,inner sep=1.5pt] {};
             \node (g) at (3,0) [circle,fill,inner sep=1.5pt] {};
