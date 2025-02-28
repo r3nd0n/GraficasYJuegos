@@ -130,19 +130,21 @@ la tarea anterior puede resultar de utilidad.)
         que pertenecen a $V(G)$ y no pertenecen a $S$.\\
 
         Como sabemos que $u, v \notin S$. Si es que $u$ es adyacente 
-        a $\frac{|S|}{2}$ elementos $s \in S$ y $v$ es adyacente a $\frac{|S|}{2}$ elementos $s' \in S$.
-        Como sabemos que $|S| = |V| - 2$, así $u$ es adyacente a $\frac{|V| - 2}{2}$ elementos $s \in S$ y $v$ es adyacente a
-        $\frac{|V| - 2}{2}$ elementos $s' \in S$.\\
+        a $\frac{|S|}{2}$ elementos $s \in S$ y $v$ es adyacente a $\frac{|S|}{2}$ elementos $s' \in S$, es decir,
+        $u$ es adyacente a $\frac{|V| - 2}{2}$ elementos $s \in S$ y $v$ es adyacente a
+        $\frac{|V| - 2}{2}$ elementos $s' \in S$. Con lo anterior podemos decir que $u$ es adyacente a los elementos del 
+        subconjunto de $S$ $\{s_0, s_1, s_2, \dots, s_n\}$, mientras que $v$ es adyacente a los elementosdel subconjunto de $S$
+        $\{s'_0, s'_1, s'_2, \dots, s'_n\}$\\
 
         Como por hipotesis sabemos que $d(u), d(v) \geq \left\lfloor \frac{|V|}{2} \right\rfloor$, entonces cuando
-        $|V|$ es impar debe haber un $s_i$ en $S$ tal que $u$ es adyacente a $s_i$ y también $v$ es adyacente a $s_i$, 
-        mientras que cuando $|V|$ es par existen al menos un $s_i$ y un $s_j$ a los cuales $u$ y $v$ son adyacentes.
+        $|V|$ es impar debe haber un $s^{\ast}$ en $S$ tal que $s_n = s^{\ast} = s'_n$.
+        Mientras que cuando $|V|$ es par, existe otro $s^{\ast \ast}$ que cumple $s_i = s^{\ast \ast} = s'_i$ a los cuales $u$ y $v$ son adyacentes.
         Por lo que podemos grantizar una $uv$- trayectoria $P$:
         
         \begin{center}
-            $P = (u, s_k = s_i = s'_k, v)$ cuando $|V|$ es par e impar y\\
+            $P = (u, s_n = s^{\ast} = s'_n, v)$ cuando $|V|$ es par e impar y\\
 
-            $P' = (u, s_k = s_j = s'_k, v)$, cuando $|V|$ es par
+            $P' = (u, s_n = s^{\ast \ast} = s'_n, v)$, cuando $|V|$ es par
         \end{center}
 
         para cada $u, v \in V(G)$. Por lo tanto $G$ es conexa.\\
