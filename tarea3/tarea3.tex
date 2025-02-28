@@ -45,25 +45,70 @@
 Demuestre que si $e \in E$, entonces $c_G \leq c_{G - e} \leq c_G + 1$.\\
 
 \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!, breakable]
-
+	$G$ es una  gráfica cuyo número de componentes conexas se denota $c_G$ y $e = uv$ es una arista tal que $e \in E_G$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!, breakable]
-    $Def$.
+    $Def$. A las subgráficas de una gráfica G, máximas por contención con la propiedad de ser conexas, se les llama \textbf{componentes conexas}.
 \end{tcolorbox}
+
+Por hipótesis el número de componentes conexas de $G$ es $c_G$. Sabemos que $e \in E_G$ por lo cual $e$ forma parte de alguna componente conexa en G. Como se trata de componentes conexas , entre cualesquiera vértices que pertenezcan a la misma componente conexa que $e$,  existe un $camino$. A partir de este punto se pueden distinguir dos casos generales:\\
+
+Sean $x,y$ dos vértices en la misma componente conexa que $e$.
+\begin{enumerate}
+ 	\item [1)] Existe un $xy-camino$, llamémoslo  $W$, tal que $e$ no forma parte de $W$:\\
+	En este caso, como $e$ no forma parte de W entonces al eliminar dicha arista el $xy-camino$ sigue existiendo.
+	\item [2)]Existe un $xy-camino$, llamémoslo  $P$, tal que $e$ forma parte de $P$. En este segundo caso es donde divergen dos posibilidades muy 				importantes:
+	\begin{enumerate}	
+		\item Si entre los vértices $u$ y $v$ existe un $uv-camino$ distinto de \{$u$,$e$,$v$\}, que denotaremos como R, al eliminar la arista $e$ de G, el 	camino P ya no coneca a $x$ con $y$, sin embargo, prevalece un $xy-camino$ descrito del siguiente modo: $xPuRvPy$. En 	consiguiente podemos decir que la grafica sigue siendo conexa y que por lo tanto $c_{G-e}$ = $c_G$.
+		
+		\item Si entre los vértices $u$ y $v$ el único camino existente es \{$u$,$e$,$v$\}, al eliminar $e$ de G, el camino P deja de 		existir y sucede que $u$ no puede alcanzar a $v$. Como resultado $x$ no puede alcanzar a $y$, oséase, no existe un $xy-camino$; la componente conexa se ha separado.Por el incisio 1), sabemos que todos los caminos en los que $e$ no forma parte se conservan, por lo tanto, en ambas particiones la grafica sigue 	siendo conexa. Asi podemos concluir que $c_{G-e}$ = $c_G$ + 1.
+	\end{enumerate}	
+\end{enumerate}
+
+A manera de resumen, puede suceder que $c_G$ = $c_{G-e}$, o bien, $c_{G-e}$ = $c_G$ + 1, en otras palabras: $c_G \leq c_{G - e} \leq c_G + 1$.\\
+
+\textit{Nota: Eliminar a la arista \underline{e} no afecta a las componentes conexas a las que \underline{e} no pertenece, es por ello que ignoramos al resto de componentes y nos centramos en la componente de \underline{e}.}
 
 
 \vspace{1cm}
-
 %
 % Ejercicio 2
 %
-\textbf{2.} Una gráfica es \textit{escindible} completa si su conjunto de vértices admite una partición $(S, K)$
+\textbf{2.} Una gráfica es \textit{escindible completa} si su conjunto de vértices admite una partición $(S, K)$
 de tal forma que S es un conjunto independiente, $K$ es un clan, y cada vértice en $S$ es
 adyacente a cada vértice en $K$. Demuestre que una gráfica es escindible completa si y
 sólo si no contiene a $C_4$ ni a $\overline{P_3}$ como subgráfica inducida. (Sugerencia: Un ejercicio de
 la tarea anterior puede resultar de utilidad.)
 \vspace{1cm}
+\begin{tcolorbox}[title=\textbf{Hipótesis}, colback=red!15!white, colframe=black!]
+	Una gráfica es \textbf{escindible completa} si y sólo si no contiene a $C_4$ ni a $\overline{P_3}$ como subgráfica inducida.
+\end{tcolorbox}
+	
+\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+    $Def$. Una gráfica es \textit{escindible completa} si su conjunto de vértices admite una partición $(S, K)$
+de tal forma que S es un conjunto independiente, $K$ es un clan, y cada vértice en $S$ es
+adyacente a cada vértice en $K$.\\
+	$Def$. Un subconjunto no vacío de vértices de una gráfica es un \textbf{clan} si y sólo si induce una subgráfica completa. Alternativamente, un subconjunto de los vértices de una gráfica G es un clan si y sólo si es un conjunto
+independiente en la gráfica complementaria $\overline{G}$.
+\end{tcolorbox}
+
+$\Rightarrow \rfloor$ Sea $G$ una gráfica, tal que $G$ es escindible completa.\\
+
+Si tenemos una subgráfica inducida de $G$ tal que es igual a $C_4$, $V_{C_4}$= \{$v_1,v_2,v_3,v_4$\} y $E_{C_4}$ = \{$v_1v_2,v_2v_3,v_3v_4,v_4v_1$\} tenemos 3 posibles biparticiones en $C_4$:
+
+\begin{enumerate}
+ \item[i)] Sea la bipartición (X,Y) en $C_4$, tal que $v_1,v_3 \in X$ y $v_2,v_4 \in Y$\\
+ 
+ Tenemos que el vértice $v_1$ es adyacente a $v_2$ y $v_4$ pero que el vértice.
+\end{enumerate}
+
+Tambien de nuestra hipótesis se sigue que \textbf{G no es completa}, pues no existen aristas que unan a los vértices en S.
+
+Finalmente\\
+
+
+$\Leftarrow \rfloor$ Sea G una gráfica tal que G no contiene a $C_4$ ni a 
 
 %
 % Ejercicio 3
