@@ -275,9 +275,26 @@ la tarea anterior puede resultar de utilidad.)
 \textbf{5.} Demuestre que si $D$ no tiene lazos y $\delta^+ \geq 1$, entonces $D$ contiene un ciclo dirigido de longitud 
 al menos $\delta^+ + 1$.\\
 
-\begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
-    $Def$.  
+\begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
+    Sabemos que $D$ no tiene lazos y ademas $\delta^{+} \geq 1$.
 \end{tcolorbox}
+$P.D$ La gráfica $D$ contiene un cilco dirigido de longitud al menos $\delta^{+} + 1$
 
+Sea $D$ una gráfica dirgida que conntiene una trayecttoria dirigida máxima $P$ tal que:
+\begin{center}
+    $P = (d_1, e_1, d_2, e_2, \dots,d_{k-1}, e_{k - 1}, d_k)$
+\end{center}
+Como sabemos que P es de longitud máxima y además el exgrado minimo de $D$ es mayor o igual a 1, entonces el vértice $d_k$ tiene 
+una arísta saleinte $e_k$ que, por ser $P$ de longitud máxima no puede incidir en un vértice $d_{k +1}$, pues de ser así 
+$P$ no sería de lóngitud máxima.\\
+
+De lo anterior, debe haber un vértice $d_i$ en la secuancia de $P$ tal que $d_k$ incide en $d_i = d_{k + 1}$ con $i \in \{1, 2, \dots, k-1\}$,
+de no ser así $P$ no sería una trayectoria dirigida de longitud máxima. Con ello deducimos:
+\begin{center}
+    $P = (d_1, e_1, d_2, e_2,\dots, d_i = d_{k+1}, \dots,d_{k-1}, e_{k - 1}, d_k, e_k, d_i = d_{k+1})$
+\end{center}
+
+Como hemos visto que $d_k$ debe incidir en un vértice anterior y perteneciente a $P$ decimos que 
+$D$ contiene un ciclo de al menos longitud $\delta^{+} +1$.
 
 \end{document}
