@@ -90,21 +90,138 @@ la tarea anterior puede resultar de utilidad.)
 
 \begin{enumerate}[label=\alph*)]
 
-    \item Demuestre que si $\mid E \mid > n - 1$, entonces $G$ es conexa.
-    \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
-
-    \end{tcolorbox}
+    \item Demuestre que si $\mid E \mid >$ \( \binom{|V|-1}{2} \), entonces $G$ es conexa.
     \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+        $Def.$ \textbf{Gráfica conexa}: G es conexa si para todos $u, v \in V$  existe un $uv$-camino.\\
+
+        $Def.$ \textbf{Coeficiente binomial}: Denotado por \( \binom{n}{2} \), representa el número de maneras 
+        de elegir subconjuntos de tamaño $2$ a partir de un conjunto de $n$ elementos.
     
     \end{tcolorbox}
-
-    \item Para cada $n > 3$ encuentre una gráfica inconexa de orden $n$ con $|E| = n - 1$.
     \begin{tcolorbox}[title=\textbf{Hipotesis}, colback=red!15!white, colframe=black!]
+        $Hip.$ Sea $G$ una gráfica que cumple $\mid E \mid >$ \( \binom{|V|-1}{2} \)
 
     \end{tcolorbox}
-    \begin{tcolorbox}[title=\textbf{Definiciones}, colback=blue!15!white, colframe=black!]
+
+    Notemos que las gráficas que cumplen con nuestra hipótesis, empiezan justo después del caso donde:
+
+    \begin{center}
+        $\mid E \mid$ = \( \binom{|V|-1}{2} \)
+    \end{center}
+
+    Es decir, desde el caso en el que nuestras gráficas son inconexas. Esto es debido a que este tipo particular de 
+    gráficas, dada un número $n$ arbitrario de vertices, donde $n > 3$, tienen como subgráfica inducida a un $K_{n-1} \cup v$ 
+    donde, $v$ representa a un vertice aislado.\\
+
+    Representemos esta inconexidad suponiendo que en una gráfica $H$, cumple que
+    $\mid E_H \mid$ = \( \binom{|V|-1}{2} \) donde podemos hacer un partición $(X,Y)$ en $V_H$ donde en $X$ existe un $ux$-camino
+    camino $uWx$, donde $v, x \in K_{n-1}$ y además, $y \in Y$ que es nuestro vertice aislado.\\
+
+    Como es evidente, para que este tipo de gráficas tenga un $uv$-camino, particularmente que exista 
+    un $uy$-camino en $H$, i.e. que sea conexa, es necesario que en las particiones de estas gráficas 
+    $(X,Y)$ sean adyacentes, dicho de otro modo:
+
+    \begin{center}
+        $\mid E \mid >$ \( \binom{|V|-1}{2} \)
+    \end{center}
+
+    O bien:
+
+    \begin{center}
+        \( \binom{|V|-1}{2} \) + 1 $>$ \( \binom{|V|-1}{2} \)
+    \end{center}
+
+    Donde debe existir una aristas más en nuestra gráfica $G$ para que sea conexa, justo lo que es nuestra 
+    hipótesis. Lo que quiere decir que las gráficas que cumplan:
+
+    \begin{center}
+        $\mid E \mid >$ \( \binom{|V|-1}{2} \)
+    \end{center}
+
+    En efecto, son conexas, pues existe un uv-camino para cada $u, v \in V$.
+
+
+
+
+    \item Para cada $n > 3$ encuentre una gráfica inconexa de orden $n$ con $\mid E \mid$ = \( \binom{n-1}{2} \)\\
+
+    Dibujando los gŕaficas para $n = 4, n = 5, n = 6$ y $n = 7$\\
+
+    \begin{figure}[h!]
+        \centering
+        \begin{minipage}{0.2\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=1]
+                \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (b) at (0,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (c) at (1,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (d) at (2,1) [circle,fill,inner sep=1.5pt,color=orange] {};
+
+                \draw (a) -- (b) (b) -- (c) (a) -- (c);
     
-    \end{tcolorbox}
+            \end{tikzpicture}
+            \caption{\scriptsize Representación de una gráfica con una subgráfica $3$-regular de 4 vertices, uno aislado, con 3 aristas }
+        \end{minipage}
+        \hspace{0.20\textwidth}
+        \begin{minipage}{0.2\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=1]
+                \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (b) at (0,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (c) at (1,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (d) at (1,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (e) at (2,1) [circle,fill,inner sep=1.5pt,color=orange] {};
+
+                \draw (a) -- (b) (b) -- (d) (d) -- (c) (c) -- (a) (a) -- (d) (b) -- (c);
+    
+            \end{tikzpicture}
+            \caption{\scriptsize Representación de una gráfica con una subgráfica $4$-regular de 5 vertices, uno aislado, con 6 aristas}
+        \end{minipage}
+        \hspace{0.20\textwidth}
+        \begin{minipage}{0.2\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=1]
+                \node (a) at (0,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (b) at (1,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (c) at (1.5,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (d) at (0.5,1.5) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (e) at (-0.5,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (f) at (3,0.75) [circle,fill,inner sep=1.5pt,color=orange] {};
+
+                \draw (a) -- (b) (a) -- (c) (a) -- (d) (a) -- (e) (b) -- (c) (b) -- (d) (b) -- (e) 
+                (c) -- (d) (c) -- (e) (d) -- (e);
+
+                
+            \end{tikzpicture}
+            \caption{\scriptsize Representación de una gráfica con una subgráfica $5$-regular de 6 vertices, uno aislado, con 10 aristas}
+        \end{minipage}
+        \hspace{0.20\textwidth}
+        \begin{minipage}{0.2\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=1]
+                \node (a) at (-0.5,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (b) at (1.5,0) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (c) at (1.5,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (d) at (0.5,1.5) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (e) at (-0.5,1) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (f) at (0.5,-1.5) [circle,fill,inner sep=1.5pt,color=blue] {};
+                \node (g) at (3,0.75) [circle,fill,inner sep=1.5pt,color=orange] {};
+                
+                \draw (a) -- (b) (a) -- (c) (a) -- (d) (a) -- (e) (a) -- (f) (b) -- (c) 
+                (b) -- (d) (b) -- (e) (b) -- (f) (c) -- (d) (c) -- (e) (c) -- (f) (d) -- (e)
+                (d) -- (f) (e) -- (f)
+
+            \end{tikzpicture}
+            \caption{\scriptsize Representación de una gráfica con una subgráfica $6$-regular de 7 vertices, uno aislado, con 15 aristas}
+        \end{minipage}
+    \end{figure}
+
+    Notemos que las gráficas obtenidas tienen la particularidad de tener inducidas en ellas, como subgráfica, a un $K_{n-1} \cup v$ donde, $v$ 
+    representa a un vertice aislado dado un $n$ arbitrario que representa justamente $|V| = n$. Y cumple 
+    con la condición de que $\mid E \mid = \binom{n-1}{2} = \frac{(n-1)(n-2)}{2}$.
+
+    
+    
 \end{enumerate}
 
 \vspace{1cm}
@@ -171,7 +288,7 @@ la tarea anterior puede resultar de utilidad.)
             \caption{\scriptsize Representación de $G$ cuando $|V|$ es par, suponiendo que en la columna central (negra) son adaycentes cualesqueira 2 vértices.}
 
        \end{minipage}
-        \hspace{0.1\textwidth}
+        \hspace{0.015\textwidth}
         \begin{minipage}{0.2\textwidth}
             \centering
         \begin{tikzpicture}[scale=1]
