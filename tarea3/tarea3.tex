@@ -93,28 +93,314 @@ adyacente a cada vértice en $K$.\\
 independiente en la gráfica complementaria $\overline{G}$.
 \end{tcolorbox}
 
-$\Rightarrow \rfloor$ Sea $G$ una gráfica, tal que $G$ es escindible completa.\\
+Demostramos por contrapositiva.\\
 
-Si tenemos una subgráfica inducida de $G$ tal que es igual a $C_4$, $V_{C_4}$= \{$v_1,v_2,v_3,v_4$\} y $E_{C_4}$ = \{$v_1v_2,v_2v_3,v_3v_4,v_4v_1$\} tenemos 3 posibles biparticiones en $C_4$:
+$\Rightarrow \rfloor$ Sea $G$ una gráfica, tal que $G$ contiene a $\overline{P_3}$ o bien contiene a $C_4$ como subgráfica inducida , entonces G no es escindible completa.   \\
+
+Sea $F$ una gráfica, supongamos que $C_4$ es un subgráfica inducida de $F$. Ahora demostremos que $C_4$ no puede ser escindible completa, esto es, que NO EXISTE una biparticion ($S$,$K$) en $C_4$ tal que $S$ sea un conjunto independiente, $K$ un clan y todo $s \in S$ sea adyacente a todo $k \in K$.\\
+
+Como se trata de una gráfica de 4 vértices y tanto $S$ como $K$ tienen al menos un elemento, eso nos deja tres casos generales para la bipartición ($S$,$K$) en $C_4$.\\
+
+\begin{figure}[h!]
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            		\node (b) at (0,1) [circle,fill,inner sep=1.5pt] {};
+            		\node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            		\node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+
+            		\draw (a) -- (b) (c) -- (d) (b) -- (d) (a) -- (c);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Representación de $C_4$}
+\end{figure}
+
 
 \begin{enumerate}
- \item[i)] Sea la bipartición (X,Y) en $C_4$, tal que $v_1,v_3 \in X$ y $v_2,v_4 \in Y$\\
+ \item[i)] $|S| = |K|$ = 2
  
- Tenemos que el vértice $v_1$ es adyacente a $v_2$ y $v_4$ pero que el vértice.
+ Al tratar de elegir vértices para el conjunto S, necesitamos que dichos vértices no sean adyacentes entre si, la única opción es elegir vértices  en esquinas opuestas de $C_4$. Nos queda que $S$ = \{\textcolor{blue}{$v_1,v_3$}\} y $K$ = \{$v_2,v_4$\}.\\
+ 
+ \begin{figure}[h!]
+ 	\begin{subfigure} {0.6\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=east] at (a.west) {$\tiny v_4 $}; 
+            		\node (b) at (0,1) [circle,fill = blue,inner sep=1.5pt] {};
+            		\node [anchor=east] at (b.west) {$\tiny v_1$}; 
+            		\node (c) at (1,0) [circle,fill =blue,inner sep=1.5pt] {};
+            		\node [anchor=west] at (c.east) {$\tiny v_3$}; 
+            		\node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (d.east) {$\tiny v_2$}; 
+
+            		\draw (a) -- (b) (c) -- (d) (b) -- (d) (a) -- (c);
+            		\draw (a) -- (b) (c) -- (d) (b) -- (d) (a) -- (c);
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+	\begin{subfigure} {0.2\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill =blue,inner sep=1.5pt] {};
+            		\node [anchor=east] at (a.west) {$\tiny v_3 $}; 
+            		\node (b) at (0,1) [circle,fill = blue,inner sep=1.5pt] {};
+            		\node [anchor=east] at (b.west) {$\tiny v_1$}; 
+            		\node (c) at (1,0) [circle,fill ,inner sep=1.5pt] {};
+            		\node [anchor=west] at (c.east) {$\tiny v_4$}; 
+            		\node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (d.east) {$\tiny v_2$}; 
+
+            		\draw  (b) -- (d) (a) -- (c) (a) -- (d) (b) -- (c);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+\end{figure}
+ 
+ Sin embargo el subconjunto $K$ no es un clan (falta la arista $v_2v_4$). Si intentamos dar cualquier otra partición de estas características para $C_4$ el resultado es análogo, pues (como mencionamos antes) los únicos vértices no adyacentes se encuentran en las esquinas.  \\
+ 
+  \item[ii)] $|S|$ = 1 y $|K|$ = 3
+ 
+ En este otro caso, digamos que $S$ = \{\textcolor{red}{$v_1$}\} y $K$ = \{$v_2,v_3,v_4$\}. Con esta particion, nuevamente $K$ no es un clan (falta la arista $v_2v_4$), y aunque $S$ es independiente, el único vértice en $S$ no es adyacente a todos los vértices en $K$ (falta la arista $v_1v_3$).\\
+ 
+ \begin{figure}[h!]
+ 	\begin{subfigure} {0.6\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=east] at (a.west) {$\tiny v_4 $}; 
+            		\node (b) at (0,1) [circle,fill,inner sep=1.5pt, color = red] {};
+            		\node [anchor=east] at (b.west) {$\tiny v_1$}; 
+            		\node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (c.east) {$\tiny v_3$}; 
+            		\node (d) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (d.east) {$\tiny v_2$}; 
+
+            		\draw (a) -- (b) (c) -- (d) (b) -- (d) (a) -- (c);
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+	\begin{subfigure} {0.2\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (a.east) {$\tiny v_4 $}; 
+            		\node (b) at (1,2) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (b.east) {$\tiny v_2$}; 
+            		\node (c) at (1,1) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (c.east) {$\tiny v_3$}; 
+            		\node (d) at (0,2) [circle,fill = red,inner sep=1.5pt] {};
+            		\node [anchor=east] at (d.west) {$\tiny v_1$}; 
+
+            		\draw  (b) -- (d) (a) -- (c) (a) -- (d) (b) -- (a);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+\end{figure}
+
+\begin{center}
+Este resultado es análogo, no importa que vértice en $C_4$ elijamos para el subconjunto $S$.\\
+\end{center}
+
+
+	\item[iii)] $|S|$ = 3 y $|K|$ = 1
+	
+	Esta partición en $C_4$ es imposible ya que cualesquiera 3 vértices que elijamos para $S$, al menos dos son adyacentes (no se cumple que $S$ sea un conjunto independiente).\\
+	
+	\begin{figure}[h!]
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep=1.5pt,color = green] {};
+            		\node [anchor=east] at (a.west) {$\tiny v_4 $}; 
+            		\node (b) at (0,1) [circle,fill,inner sep=1.5pt,color = green] {};
+            		\node [anchor=east] at (b.west) {$\tiny v_1$}; 
+            		\node (c) at (1,0) [circle,fill,inner sep=1.5pt] {};
+            		\node [anchor=west] at (c.east) {$\tiny v_3$}; 
+            		\node (d) at (1,1) [circle,fill,inner sep=1.5pt,color = green] {};
+            		\node [anchor=west] at (d.east) {$\tiny v_2$}; 
+
+            		\draw[blue](a) -- (b)  (b) -- (d) ;
+            		\draw (a) -- (c) (c) -- (d);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Problema del caso iii)}
+	\end{figure}
 \end{enumerate}
 
-Tambien de nuestra hipótesis se sigue que \textbf{G no es completa}, pues no existen aristas que unan a los vértices en S.
-
-Finalmente\\
+$\therefore$ Si $F$ contiene a $C_4$ como subgráfica inducida, entonces $F$ no es escindible completa. Note que si tuvieramos la gráfica $F$, como $F$ contiene a $C_4$, entonces al intentar dar una biparticion ($S$,$K$) para $F$, experimentaríamos los problemas vistos anteriormente, derivados del $C_4$ en su interior.\\
 
 
-$\Leftarrow \rfloor$ Sea G una gráfica tal que G no contiene a $C_4$ ni a 
+Supongamos ahora que $\overline{P_3}$ es una subgráfica inducida de $F$, de manera similar a lo hecho en $C_4$, intentemos mostrar que NO EXISTE una biparticion ($S$,$K$) en $\overline{P_3}$ tal que $S$ sea un conjunto independiente, $K$ un clan y todo $s \in S$ sea adyacente a todo $k \in K$. Comenzemos rápidamente con los casos para dicha particion:\\
 
+\begin{figure}[h!]
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=east] at (a.west) {$\tiny v_2 $}; 
+            		\node (b) at (0.5,1) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=south] at (b.north) {$\tiny v_1 $}; 
+            		\node (c) at (1,0) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=west] at (c.east) {$\tiny v_3 $}; 
+
+            		\draw (a) -- (c);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Representación de $\overline{P_3}$}
+\end{figure}
+
+\begin{enumerate}
+	\item[i)] $|S|$ = 2 y $|K|$ = 1\\
+	
+	Necesitamos que los vértices en $S$ sean no adyacentes, asi que diremos que $S$ = \{\textcolor{red}{$v_1,v_2$}\} y $K$ = \{$v_3$\}. El subconjunto $S$ cumple con ser independiente, además $K$ es un clan (pues $|K|$ = 1), no obstante , el vértice $v_1 \in S$ no es adyacente al vértice $v_3 \in K$. Al elegir al vértice $v_3$ en lugar de $v_2$ esto sigue ocurriendo.\\
+	
+\begin{figure}[h!]
+ 	\begin{subfigure} {0.6\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill = red,inner sep= 1.5pt] {};
+            		\node[anchor=east] at (a.west) {$\tiny v_2 $}; 
+            		\node (b) at (0.5,1) [circle,fill =red,inner sep= 1.5pt] {};
+            		\node[anchor=south] at (b.north) {$\tiny v_1 $}; 
+            		\node (c) at (1,0) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=west] at (c.east) {$\tiny v_3 $}; 
+
+            		\draw (a) -- (c);
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+	\begin{subfigure} {0.2\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill = red,inner sep=1.5pt,text=white] {};
+            		\node[anchor=east] at (a.west) {$\tiny v_2 $}; 
+            		\node (b) at (0,1) [circle,fill =red,inner sep=1.5pt,text=white] {};
+            		\node[anchor=east] at (b.west) {$\tiny v_1 $}; 
+            		\node (c) at (1,0.5) [circle,fill =black,inner sep=1.5pt,text=white] {};
+            		\node[anchor=west] at (c.east) {$\tiny v_3 $}; 
+
+
+            		\draw  (a) -- (c);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+\end{figure}
+
+	
+
+	\item[ii)] $|S|$ = 1 y $|K|$ = 2\\
+
+	En este caso nos vemos obligados a decir que $K$ = \{$v_2,v_3$\} pues son los únicos 2 vértices adyacentes en $\overline{P_3}$; naturalmente $S$ = \{\textcolor{blue}{$v_1$}\}.\\
+
+\begin{figure}[h!]
+ 	\begin{subfigure} {0.6\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (0,0) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=east] at (a.west) {$\tiny v_2 $}; 
+            		\node (b) at (0.5,1) [circle,fill =blue,inner sep= 1.5pt] {};
+            		\node[anchor=south] at (b.north) {$\tiny v_1 $}; 
+            		\node (c) at (1,0) [circle,fill,inner sep= 1.5pt] {};
+            		\node[anchor=west] at (c.east) {$\tiny v_3 $}; 
+
+            		\draw (a) -- (c);
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+	\begin{subfigure} {0.2\textwidth}
+       		 \centering
+       		 \begin{tikzpicture}[scale=2]
+            		\node (a) at (1,0) [circle,fill,inner sep=1.5pt,text=white] {};
+            		\node[anchor=east] at (a.west) {$\tiny v_2 $}; 
+            		\node (b) at (0,0.5) [circle,fill =blue,inner sep=1.5pt,text=white] {};
+            		\node[anchor=east] at (b.west) {$\tiny v_1 $}; 
+            		\node (c) at (1,1) [circle,fill =black,inner sep=1.5pt,text=white] {};
+            		\node[anchor=west] at (c.east) {$\tiny v_3 $}; 
+
+
+            		\draw  (a) -- (c);
+
+        		\end{tikzpicture}
+        		\caption{\scriptsize Bipartición ($S,K$)}
+	\end{subfigure}
+\end{figure}
+	Observe que K cumple con ser un clan nuevamente, pero $v_1 \in S$ no es adyacente a ninguno de los 2 vértices en $K$. Otra vez tenemos que $\overline{P_3}$ no puede darnos una bipartición ($S,K$) donde todo vértice en $S$ sea adyacente a todo vértice en $K$.
+	
+\end{enumerate}
+$\therefore$ Si $F$ contiene a $\overline{P_3}$, entonces $F$ no es escindible completa, pues $\overline{P_3}$ no cumple con la definición de ser escindible completa. No importa si existe una bipartición ($S,K$) para el resto de vértices de $F$, al intentar inlcuir en dicha bipartición a los vértices de $\overline{P_3}$, automáticamente la definición deja de cumplirse.\\
+
+$\therefore$ Si $G$ es una gráfica, tal que $G$ contiene a $C_4$ o bien contiene a $\overline{P_3}$ como subgráfica inducida , entonces G no es escindible completa.\\
+
+$\Leftarrow \rfloor$ Sea $G$ una gráfica, si $G$ es no es escindible completa, entonces $G$ contiene a $C_4$ o a $\overline{P_3}$ como subgráfica inducida.\\
+
+Una gráfica $F$ no es escindible completa, si al dar una bipartición ($S,K$), se cumple al menos una de las siguientes afirmaciones:\\
+
+\begin{enumerate}
+	\item $S$ no es independiente.
+	\item $K$ no es un clan.
+	\item Al menos un vértice en $S$ no es adyacente a algun vértice en $K$.
+\end{enumerate}
+
+Existen 6 posibles casos (este número se obtiene de las permutaciones de las 3 afirmaciones anteriores) en los que una gráfica resulta no ser escindible completa. Analizemos si en cada uno de ellos podemos inferir la existencia de $\overline{P_3}$ o de $C_4$.\\
+
+Cabe resaltar que daremos por hecho el resto de propiedades de la definición de escindible completa, por ejemplo, en el caso i) decimos que $S$ no es independiente,es decir, suponemos que el resto de propiedades se cumplen: $K$ es un clan y que todo $s \in S$ es adyacente a todo $k \in K$.\\
+\begin{enumerate}
+	\item[i)]$S$ no es independiente
+	
+	Al $S$ no ser independiente, podemos suponer la existencia de una arista $ss'$ tal que $s,s' \in S$. También podemos afirmar que existe una $sk_1$ y $s'k_2$ aristas. Además,como $K$ es un clan, entonces la arista $k_1k_2$ existe.\\
+	
+	$\therefore$ Existe un ciclo $C$ de longitud 4, tal que $C$ = \{$s,k_1,k_2,s',s$\}.\\
+	
+	\item[ii)]$K$ no es un clan.
+	
+	Como $K$ no es un clan, al menos entre 2 vértices $k_i,k_j \in K$ no existe un arista. Llamemos a estos vértices $k_1$ y $k_2$.\\
+	
+	Sean $s_1,s_2 \in S$; entonces existyen las aristas $s_1k_1,s_1k_2,s_2k_1,s_2k_2$.\\
+	
+	$\therefore$ Existe un ciclo $C$ de longitud 4, donde $C$ = \{$s_1,k_1,s_2,k_2,s_1$\}.\\
+	
+	\item[iii)]Al menos un vértice en $S$ no es adyacente a algun vértice en $K$.
+	
+	Sean $s_1,s_2 \in S$ y $k_1,k_2 \in K$, diremos (por hipótesis) que $s_2$ no es adyacente a $k_1$. Entonces por lo menos tenemos las siguientes aristas: $s_1k_1,s_1k_2,s_2k_1,k_1k_2$.\\
+	
+	Si eliminamos al vértice $k_2$, entonces de las aristas antes mencionadas, sólo se conserva la arista $s_1k_1$. Observe que $s_1$ y $k_1$ son adyacentes pero $s_2$ no es adyacente a nadie.\\
+	
+	$\therefore$ $\overline{P_3}$ es una subgráfica inducida de $F$.\\
+	
+	\item[iv)]$S$ no es independiente y $K$ no es un clan.
+	
+	En el peor de los casos la gráfica de $S$ es completa y la de $K$ es vacía. Pero si es así, entonces basta con redefinir quien es $S$ y quien es $K$ y resulta que $F$ es escindible completa.Si ignoramos este caso "extremo", nos topamos con que entonces podemos eliminar vértices $s_i \in S$ hasta que $S$ sea independiente. Análogamente, podríamos eliminar vértices $k_j \in K$ hasta que $K$ sea un clan.\\
+	
+	Bajo esta lógica, si eliminamos \textbf{solamente} vértices en $S$, hasta que $S$ sea independiente, podemos aplicar el caso ii) y decir que $F$ tiene a $C_4$ como subgráfica inducida. Si eliminamos \textbf{solamente} vértices en $K$, hasta que $K$ sea un clan, podemos aplicar el caso i) y decir que $F$ tiene a $C_4$ como subgráfica inducida.\\
+	
+	$\therefore$ $F$ tiene a $C_4$ como subgráfica inducida.\\
+	
+	\item[v)]$S$ no es independiente y al menos un vértice en $S$ no es adyacente a algun vértice en $K$.\\
+	
+	En el caso en el cual la gráfica de $S$ sea completa y $\forall s_i \in S$, $s_i$ no es adyacente a ningun $k_j \in K$. Podemos eliminar vértices en $S$ hasta dejar únicamente 2, eliminar vértices en $K$ hasta dejar uno y viceversa. Nos queda entonces que $\overline{P_3}$ es subgráfica de $F$.\\
+	
+	En cualquier otro caso la gráfica de $S$ no es completa y existe al menos un $s_i \in S$ tal que $s_i$ no es adyacente a algun $k_j \in K$. Nombremos a este vértice $s_0$. Al eliminar todos los vértices en $S$ excepto a $s_0$, $S$ se vuelve independiente, y podemos aplicar el caso iii), que nos dice que $\overline{P_3}$ es una subgráfica inducida de $F$.\\
+	
+	$\therefore$ $F$ tiene a  $\overline{P_3}$ como subgráfica inducida.\\
+	
+	\item[vi)]$S$ no es independiente, $K$ no es un clan y al menos un vértice en $S$ no es adyacente a algun vértice en $K$.\\
+	
+	En el caso más interesante, $S$ es completa y $K$ es vacía, renombrando quien es $S$ y quien es $K$ podemos aplicar el caso iii). En otras circunstancias, siempre ocurre que podemos hacer que $S$ sea independiente o bien que $K$ sea un clan. Dependiendo de las circunstancias podremos aplicar los casos iv) o v).\\
+	
+\end{enumerate}
+
+	$\therefore$ $F$ contiene a $C_4$ o a $\overline{P_3}$ como subgráfica inducida.\\
+
+	$\therefore$ Si $G$ no es escindible completa, entonces contiene a $C_4$ o $\overline{P_3}$ a  como subgráfica inducida.\\
+	
+	$\therefore$ Una gráfica es \textbf{escindible completa} si y sólo si no contiene a $C_4$ ni a $\overline{P_3}$ como subgráfica inducida.\\
+\vspace{1cm}
 %
 % Ejercicio 3
 %
 \textbf{3}.
-
 \begin{enumerate}[label=\alph*)]
 
     \item Demuestre que si $\mid E \mid > n - 1$, entonces $G$ es conexa.

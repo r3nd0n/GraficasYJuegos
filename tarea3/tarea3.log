@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.21)  27 FEB 2025 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.21)  28 FEB 2025 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -722,100 +722,394 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
  []
 
 
-Overfull \hbox (25.29095pt too wide) in paragraph at lines 98--99
-[]\OT1/cmr/m/n/12 Si ten-emos una subgr^^Safica in-ducida de $\OML/cmm/m/it/12 
-G$ \OT1/cmr/m/n/12 tal que es igual a $\OML/cmm/m/it/12 C[]$\OT1/cmr/m/n/12 , $
-\OML/cmm/m/it/12 V[]$\OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f$\OML/cmm/m/it/12 v[];
- v[]; v[]; v[]$\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 y $\OML/cmm/m/it/12 E[]$ \OT1
-/cmr/m/n/12 = \OMS/cmsy/m/n/12 f$\OML/cmm/m/it/12 v[]v[]; v[]v[]; v[]v[]; v[]v[
-]$\OMS/cmsy/m/n/12 g
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 129.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 131.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 133.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 135.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 148.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 152.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 156--158
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 172.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 174.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 176.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 178.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 188.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 190.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 192.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 194.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Overfull \hbox (6.57745pt too wide) in paragraph at lines 195--196
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 216.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 218.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 222.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 241.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 243.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 245.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 263.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 265.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 267.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 277.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 281.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 302.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 304.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 306.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 316.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 318.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 320.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--449
+
+ []
+
+
+Overfull \hbox (6.57745pt too wide) in paragraph at lines 481--482
  [][] 
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 196--196
+Underfull \hbox (badness 3158) in paragraph at lines 482--482
 \OT1/cmr/m/n/8 de $\OML/cmm/m/it/8 G$ \OT1/cmr/m/n/8 cuando $\OMS/cmsy/m/n/8 j\
 OML/cmm/m/it/8 V\OMS/cmsy/m/n/8 j$ \OT1/cmr/m/n/8 es par,
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 196--196
+Underfull \hbox (badness 1448) in paragraph at lines 482--482
 \OT1/cmr/m/n/8 suponiendo que la columna
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 196--196
+Underfull \hbox (badness 1242) in paragraph at lines 482--482
 \OT1/cmr/m/n/8 cen-tral son aday-centes cua-
  []
 
 
-Overfull \hbox (6.57745pt too wide) in paragraph at lines 216--217
+Overfull \hbox (6.57745pt too wide) in paragraph at lines 502--503
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--588
 
  []
 
-[5] (./tarea3.aux)
+[8] [9] (./tarea3.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20252 strings out of 474222
- 403102 string characters out of 5748733
- 1942975 words of memory out of 5000000
- 42206 multiletter control sequences out of 15000+600000
- 567218 words of font info for 72 fonts, out of 8000000 for 9000
+ 20272 strings out of 474222
+ 403497 string characters out of 5748733
+ 1949975 words of memory out of 5000000
+ 42226 multiletter control sequences out of 15000+600000
+ 567518 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,93p,537b,928s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,93p,537b,1041s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb>
-Output written on tarea3.pdf (5 pages, 324286 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on tarea3.pdf (9 pages, 358403 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
